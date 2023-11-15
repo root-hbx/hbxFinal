@@ -52,6 +52,35 @@ nav:
       - BLOG/OS/fork-exec-spawn.md
       - BLOG/OS/fork-example.md
 
+  - 计算机课程整理:
+    - curriculum_study/index.md
+
+    - C++PrimerPlus:
+      - curriculum_study/C++PrimerPlus/chapter2开始学习c++.md
+      - curriculum_study/C++PrimerPlus/chapter3处理数据.md
+      - curriculum_study/C++PrimerPlus/chapter4复合类型.md
+      - curriculum_study/C++PrimerPlus/chapter5循环与关系表达式.md
+      - curriculum_study/C++PrimerPlus/chapter6分支语句与逻辑运算符.md
+      - curriculum_study/C++PrimerPlus/chapter7函数-c++的编程模块.md
+      - curriculum_study/C++PrimerPlus/chapter8函数探幽(上).md
+      - curriculum_study/C++PrimerPlus/chapter8函数探幽(下).md
+      - curriculum_study/C++PrimerPlus/chapter9内存模型和名称空间.md
+      - curriculum_study/C++PrimerPlus/chapter10对象和类.md
+      - curriculum_study/C++PrimerPlus/chapter11使用类.md
+      - curriculum_study/C++PrimerPlus/chapter12类和动态内存分配.md
+      - curriculum_study/C++PrimerPlus/chapter13类继承.md
+      - curriculum_study/C++PrimerPlus/chapter14c++中的代码重用.md
+      - curriculum_study/C++PrimerPlus/chapter15友元、异常和其他.md
+      - curriculum_study/C++PrimerPlus/chapter16string类和标准模板库.md
+      - curriculum_study/C++PrimerPlus/chapter17输入、输出和文件.md
+      - curriculum_study/C++PrimerPlus/chapter18探讨c++新标准.md
+
+    - CSAPP_(CMU):
+      - curriculum_study/CSAPP_CMU/常见汇编指令.md
+      - curriculum_study/CSAPP_CMU/chapter2_信息的表示和处理.md
+      - curriculum_study/CSAPP_CMU/chapter3_程序的机器级表示.md
+
+
   - hbx是谁:
     - ME/index.md
     - ME/description.md
