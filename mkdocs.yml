@@ -1,0 +1,139 @@
+# [Info]
+site_name: carrot_world # 左上角标题
+site_url: https://github.com/root-hbx # 可以修改！
+site_author: 胡博瑄
+site_description: 胡博瑄的学习网站
+
+# [Navigtion]
+nav:
+  - 基础运维知识:
+    - LECTURE/index.md 
+    - Linux:
+      - Linux讲座: LECTURE/Linux/linux.md
+      - 命令行入门精简版: LECTURE/Linux/commands-concise.md
+    - Markdown:
+      - Markdown讲座: LECTURE/Markdown/markdown.md
+      - VSCode及插件安装: LECTURE/Markdown/vscode-extension.md
+    - Git:
+      - Git: LECTURE/Git/git.md
+      - Git例子: LECTURE/Git/git-demos.md
+      - Git合作: LECTURE/Git/git-teamwork.md
+      - Windows安装Git: LECTURE/Git/windows-install.md
+    - 应用开发设计: LECTURE/App/app-design.md
+    - 在macOS上用VSCode写C++代码:
+      - 0 介绍: LECTURE/vscode-cpp/0_about.md
+      - 1 前言和课程说明: LECTURE/vscode-cpp/1_前言和课程说明.md
+      - 2 认识macOS的文件系统: LECTURE/vscode-cpp/2_认识macOS的文件系统.md
+      - 3 认识程序: LECTURE/vscode-cpp/3_认识程序.md
+      - 4 认识终端和shell: LECTURE/vscode-cpp/4_认识终端和shell.md
+      - 5 开启VSCode的大门: LECTURE/vscode-cpp/5_开启VSCode的大门.md
+      - 6 VSCode代码运行自动化: LECTURE/vscode-cpp/6_VSCode代码运行自动化.md
+      - 7 用VSCode调试Cpp代码: LECTURE/vscode-cpp/7_用VSCode调试Cpp代码.md
+      - 8 课程回顾: LECTURE/vscode-cpp/8_课程回顾.md
+      - 其他: LECTURE/vscode-cpp/9_others.md
+      - 极速版: LECTURE/vscode-cpp/10_极速版.md
+      - 补充: LECTURE/vscode-cpp/11_补充.md
+    
+  - 常用开发简介:
+    - BLOG/index.md
+    - BLOG/others.md
+    - Apple:
+      - BLOG/Apple/mac-recommend.md
+      - BLOG/Apple/ipad-recommend.md
+    - macOS:
+      - BLOG/macOS/tree.md
+      - BLOG/macOS/zoom.md
+      - BLOG/macOS/sharing-mac-android.md
+      - BLOG/macOS/mad.md
+      - BLOG/macOS/stream.md
+      - BLOG/macOS/intel-windows.md
+    - Markdown:
+      - BLOG/Markdown/grammars.md
+      - BLOG/Markdown/mkdocs-site.md
+      - BLOG/Markdown/mdbook-site.md
+      - BLOG/Markdown/github-pages.md
+    - Linux:
+      - BLOG/Linux/vim.md
+      - BLOG/Linux/tmux.md
+      - BLOG/Linux/unix.md
+      - BLOG/Linux/kernel-compile.md
+      - BLOG/Linux/pi-start.md
+    - OS:
+      - BLOG/OS/fork-exec-spawn.md
+      - BLOG/OS/fork-example.md
+
+  - hbx是谁:
+    - ME/index.md
+    - ME/description.md
+    - ME/ability.md
+    - ME/experience.md
+
+# [UI]
+## [top]
+theme:
+  name: material
+  palette:
+    - scheme: default # 日间模式
+      primary: indigo # 上方的
+      accent: orange # 链接等可交互元件的高亮色
+      toggle:
+        icon: material/weather-night # 图标
+        name: 切换至夜间模式 # 鼠标悬浮提示
+    - scheme: slate # 夜间模式
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至日间模式
+  features:
+    - navigation.tabs # 使用Tab来进行分类
+    - navigation.top # 返回顶部的按钮 在上滑时出现
+    - navigation.indexes # Tab会有一个index.md 而不是在打开Tab时打开第一篇文章
+    - navigation.expand # 打开Tab时左侧目录全部展开
+    - search.suggest # 搜索输入一些字母时推荐补全整个单词
+    - search.highlight # 搜索出的文章关键词加入高亮
+    - content.code.copy # 可以通过按钮复制代码
+    - content.action.edit # 点击按钮跳转到编辑页面  需要结合 edit_uri 一起使用
+  language: zh # 一些提示性的文字会变成中文
+  icon:
+    repo: fontawesome/brands/github
+edit_uri: edit/main/docs # 编辑按钮跳转的链接
+## [top-right corner]
+repo_url: https://github.com/root-hbx # 右上角点击跳转的链接
+repo_name: GithubRepo_Of_hbx # 右上角的名字
+## [bottom-left corner]
+copyright: 胡博瑄 # 左下角的版权声明
+## [bottom-right corner]
+
+# [Extensions]
+plugins:
+  - search: # 现在还不支持中文搜索 支持之后可以设置语言
+    # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
+      lang:
+        - en
+        - ja
+  - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
+markdown_extensions:
+  - pymdownx.arithmatex: # latex支持
+      generic: true
+  - attr_list # 给图片后面添加{width="300"}设置大小
+  - toc:
+      permalink: true # 固定标题位置为当前位置
+  - pymdownx.highlight: # 代码块高亮
+      # linenums: true # 显示行号
+      # auto_title: true # 显示编程语言名称
+  - pymdownx.superfences # 代码块高亮插件
+  - meta # 支持Markdown文件上方自定义标题标签等
+  - admonition # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks
+  - pymdownx.details # admonition需要
+
+extra_javascript:
+  # latex支持
+  # check https://squidfunk.github.io/mkdocs-material/reference/mathjax/?h=math for more information
+  # notice `curl https://polyfill.io/v3/polyfill.min.js?features=es6 > docs/mkdocs/javascripts/polyfill.min.js && curl https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js > docs/mkdocs/javascripts/tex-mml-chtml.js` not works... because there are other resources that need to load
+  - mkdocs/javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # https://cdn.bytedance.com/?query=mathjax&version=3.2.0
+extra_css:
+  - mkdocs/css/no-footer.css # 不使用底部的翻页
+  - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
