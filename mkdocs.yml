@@ -79,6 +79,7 @@ nav:
       - curriculum_study/CSAPP_CMU/chapter3_程序的机器级表示.md
 
   - 优秀论文整理:
+    - sci/index.md
     - 计算机网络:
       - RDMA_over_Commodity_Ethernet_at_Scale:
         - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale(Abstruct).md
