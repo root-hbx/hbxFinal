@@ -1,7 +1,3 @@
-# 杨希杰的个人网站
-
-<https://yang-xijie.github.io>
-
-- 生成 [MkDocs](https://www.mkdocs.org) 
-- 主题 [Material](https://github.com/squidfunk/mkdocs-material)
-- 发布 [GitHub Pages](https://pages.github.com) 
+# 胡博瑄的个人网站
+- 这只是日常学习网站，并不是学术主页
+- 由于某些原因，学术主页最早于笔者大四(2026)对外开放
