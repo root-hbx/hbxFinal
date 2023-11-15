@@ -80,6 +80,34 @@ nav:
       - curriculum_study/CSAPP_CMU/chapter2_信息的表示和处理.md
       - curriculum_study/CSAPP_CMU/chapter3_程序的机器级表示.md
 
+  - 优秀论文整理:
+    
+    - 计算机网络:
+      
+      - RDMA_over_Commodity_Ethernet_at_Scale:
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale(Abstruct).md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale(Background).md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale(Introduction).md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale(Conclusion).md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/3_DSCP-BASED PFC.md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/4.1_RDMA_transport_livelock(传输活锁).md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/4.2_PFC Deadlock.md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/4.3_NIC_PFC_pause_frame_storm.md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/4.4_The_Slow-receiver_symptom.md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/5_RDMA_In_Production.md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/6_EXPERIENCES.md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/7_RELATED WORK.md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/8_CONCLUSION.md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/“读后感”.md
+        - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/issue_thinking.md
+      
+      - ICDCS23_Less_is_More_Dynamic_and_Shared_Headroom_Allocation_in_PFC-enabled_Datacenter_Networks: 
+    
+    
+    - 深度学习:
+
+    - 无用之用的文章:
+
 
   - hbx是谁:
     - ME/index.md
