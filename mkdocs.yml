@@ -100,9 +100,8 @@ nav:
         - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/8_CONCLUSION.md
         - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/“读后感”.md
         - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/issue_thinking.md
-      
-      - ICDCS23_Less_is_More_Dynamic_and_Shared_Headroom_Allocation_in_PFC-enabled_Datacenter_Networks: 
-    
+
+    - ICDCS23_Less_is_More_Dynamic_and_Shared_Headroom_Allocation_in_PFC-enabled_Datacenter_Networks:  
     
     - 深度学习:
 
