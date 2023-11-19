@@ -81,3 +81,13 @@
     - 从事交叉学科项目研究
     - 进行“磁共振影像的脑室识别与分割”项目训练
     - 师从西安交通大学第一附属医院副研究员[金超](http://medgs.xjtu.edu.cn/info/1366/10086.htm)
+
+## 有意义的照片
+![2023马拉松photo1](./photo/mls1.jpg)
+![2023马拉松photo2](./photo/mls2.jpg)
+![2023党支部讲课photo1](./photo/dzb1.jpg)
+![2023钱学森书院学生代表大会photo1](./photo/xuedaihui1.jpg)
+![2023全国计算机论坛合影photo1](./photo/luntan1.jpg)
+![2023创新港参观photo1](./photo/tour1.jpg)
+![2023露营photo1](./photo/tour2.jpg)
+![2022黄山光明顶photo1](./photo/tour3.jpg)
