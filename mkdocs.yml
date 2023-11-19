@@ -84,6 +84,19 @@ nav:
       - curriculum_study/TD_net/ch2.md
       - curriculum_study/TD_net/ch3.md
       - curriculum_study/TD_net/ch6.md
+    - Info-theory:
+      - curriculum_study/Info-theory/lec3.md
+      - curriculum_study/Info-theory/lec4.md
+      - curriculum_study/Info-theory/lec5.md
+      - curriculum_study/Info-theory/lec6.md
+      - curriculum_study/Info-theory/lec7.md
+      - curriculum_study/Info-theory/lec8.md
+      - curriculum_study/Info-theory/lec9.md
+      - curriculum_study/Info-theory/lec10.md
+      - curriculum_study/Info-theory/lec11.md
+      - curriculum_study/Info-theory/lec12.md
+      - curriculum_study/Info-theory/lec13.md
+      - curriculum_study/Info-theory/lec14.md
 
   - 优秀论文整理:
     - sci/index.md
