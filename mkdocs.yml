@@ -78,6 +78,7 @@ nav:
       - curriculum_study/CSAPP_CMU/chapter2_信息的表示和处理.md
       - curriculum_study/CSAPP_CMU/chapter3_程序的机器级表示.md
       - curriculum_study/CSAPP_CMU/chapter5_优化程序性能.md
+      - curriculum_study/CSAPP_CMU/chapter6_存储器层次结构.md
 
   - 优秀论文整理:
     - sci/index.md
