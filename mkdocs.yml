@@ -79,6 +79,7 @@ nav:
       - curriculum_study/CSAPP_CMU/chapter3_程序的机器级表示.md
       - curriculum_study/CSAPP_CMU/chapter5_优化程序性能.md
       - curriculum_study/CSAPP_CMU/chapter6_存储器的层次结构.md
+      - curriculum_study/CSAPP_CMU/chapter7_链接.md
     - TD_net:
       - curriculum_study/TD_net/ch1.md
       - curriculum_study/TD_net/ch2.md
