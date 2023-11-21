@@ -38,6 +38,7 @@
 
 ## 本科证书
 - the First provincial-level Prize in Contemporary Undergraduate Mathematical Contest in Modeling(CUMCM), 2023
+- the First provincial-level Prize in The Chinese Mathematics Competitions(CMC), 2023 
 - the Third Prize in National College Student Olympic Mathematics Competition(CSOMC), 2023
 - the Second school-level Prize in International Collegiate Programming Contest(ICPC), 2023
 
