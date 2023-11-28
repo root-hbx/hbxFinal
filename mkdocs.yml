@@ -33,7 +33,7 @@ nav:
       - 极速版: LECTURE/vscode-cpp/10_极速版.md
       - 补充: LECTURE/vscode-cpp/11_补充.md
     - ns-3的配置:
-      - 保姆级配置教程: Lecture/ns-3/ns3.md
+      - 保姆级配置教程: LECTURE/ns-3/ns3.md
     
   - 常用开发简介:
     - BLOG/index.md
