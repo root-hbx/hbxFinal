@@ -19,7 +19,6 @@ nav:
       - Git例子: LECTURE/Git/git-demos.md
       - Git合作: LECTURE/Git/git-teamwork.md
       - Windows安装Git: LECTURE/Git/windows-install.md
-    - 应用开发设计: LECTURE/App/app-design.md
     - 在macOS上用VSCode写C++代码:
       - 0 介绍: LECTURE/vscode-cpp/0_about.md
       - 1 前言和课程说明: LECTURE/vscode-cpp/1_前言和课程说明.md
@@ -33,6 +32,8 @@ nav:
       - 其他: LECTURE/vscode-cpp/9_others.md
       - 极速版: LECTURE/vscode-cpp/10_极速版.md
       - 补充: LECTURE/vscode-cpp/11_补充.md
+    - ns-3的配置:
+      - 保姆级配置教程: Lecture/ns-3/ns3.md
     
   - 常用开发简介:
     - BLOG/index.md
@@ -120,6 +121,16 @@ nav:
         - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/8_CONCLUSION.md
         - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/“读后感”.md
         - sci/计算机网络/RDMA_over_Commodity_Ethernet_at_Scale/issue_thinking.md
+      - ICDCS23_Less_is_More_Dynamic_and_Shared_Headroom_Allocation_in_PFC-enabled_Datacenter_Networks:
+        - sci/计算机网络/LessIsMore/LessIsMore_Abstruct.md
+        - sci/计算机网络/LessIsMore/LessIsMore_Introduction.md
+        - sci/计算机网络/LessIsMore/LessIsMore_Background.md
+        - sci/计算机网络/LessIsMore/LessIsMore_Motivation.md
+        - sci/计算机网络/LessIsMore/LessIsMore_DSH_Design.md
+        - sci/计算机网络/LessIsMore/LessIsMore_Evaluation.md
+        - sci/计算机网络/LessIsMore/LessIsMore_RelatedWork.md
+        - sci/计算机网络/LessIsMore/LessIsMore_Conclusion.md
+        - sci/计算机网络/LessIsMore/整理与思考.md
   
   - hbx是谁:
     - ME/index.md
