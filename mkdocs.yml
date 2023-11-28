@@ -34,6 +34,8 @@ nav:
       - 补充: LECTURE/vscode-cpp/11_补充.md
     - ns-3的配置:
       - 保姆级配置教程: LECTURE/ns-3/ns3.md
+    - terminal_zsh:
+      - mac的终端优化: LECTURE/terminal_zsh/oh_my_zsh.md
     
   - 常用开发简介:
     - BLOG/index.md
