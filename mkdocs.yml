@@ -134,6 +134,14 @@ nav:
         - sci/计算机网络/LessIsMore/LessIsMore_Conclusion.md
         - sci/计算机网络/LessIsMore/整理与思考.md
   
+  - 科研软件指南:
+    - Sci_doc/index.md
+    - ns-3:
+      - 0 ns-3及其基础配置: Sci_doc/ns-3/ch0.md
+      - 1 入门程序解析: Sci_doc/ns-3/ch1.md
+      - 2 显示结果的优化: Sci_doc/ns-3/ch2.md
+      - 3 模拟建立拓扑结构: Sci_doc/ns-3/ch3.md
+
   - hbx是谁:
     - ME/index.md
     - ME/description.md
