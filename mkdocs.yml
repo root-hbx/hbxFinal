@@ -142,7 +142,7 @@ nav:
       - 2 显示结果的优化: Sci_doc/ns-3/ch2.md
       - 3 模拟建立拓扑结构: Sci_doc/ns-3/ch3.md
       - 4 ns-3_tracing的全部实现机理: Sci_doc/ns-3/ch4.md
-      - 5 ns-3_Data-Collection: Sci_doc/ns-3/ch4.md
+      - 5 ns-3_Data-Collection: Sci_doc/ns-3/ch5.md
 
   - hbx是谁:
     - ME/index.md
