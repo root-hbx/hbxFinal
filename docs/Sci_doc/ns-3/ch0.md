@@ -1,15 +1,18 @@
-# ns-3 环境配置（mac电脑 + linux虚拟机22.04LTS）
+# ns-3 环境配置
 
 >made by XJTU  CS2201(H) 胡博瑄
+
 #### 0. ns3简介
 
 ns-3是一个开源的网络仿真器，用于网络通信系统和协议的建模与仿真。如果你准备参与计算机网络和云计算方面的科研项目，它将是你忠诚而可靠的“另一半”。它被广泛应用于研究、开发和测试各种网络技术和算法。
 
 ns-3被构建为一组相互协作的软件库，用户可以编写C++或Python编程语言的程序，并与这些库进行链接或导入。
+
 #### 1. 本文电脑配置环境与目标版本：
 1. 电脑：Macbook Pro（M2）
 2. 配置环境：Linux虚拟机（Ubuntu 22.04LTS）
 3. 目标版本：ns-3.37
+
 #### 2. 以下工具是开始使用ns-3所需的：
 >C++编译器 clang++或（g++版本9或更高）g++
 Python python3版本>=3.6
@@ -55,14 +58,14 @@ cd workspace
 git clone https://gitlab.com/nsnam/ns-3-allinone.git
 cd ns-3-allinone
 ```
-![[Pasted image 20231128112934.png]]
+![](pho/Pastedimage20231128112934.png)
 #### 4. 进入指定的ns-3-allinone进行后续配置：
 
 ==在文件夹ns-3-allinone下==对指定的ns3版本进行下载：(看文件配置和我的截图时，记得仔细看配置的路径！)
 ```unix
 python3 download.py -n ns-3.37
 ```
-![[Pasted image 20231128113354.png]]
+![](pho/Pastedimage20231128113354.png)
 
 #### 5. 用CMake包装器进行构建：
 >ps：需要注意的是，新版本的ns3（3.36后续版本）已经不再使用waf工具进行项目的构建了
@@ -75,7 +78,7 @@ python3 download.py -n ns-3.37
 ./ns3 configure --build-profile=optimized --enable-examples --enable-tests
 ```
 4. 现在你可以看到它的反馈，说明构建成功✅
-![[Pasted image 20231128113915.png]]
+![](pho/Pastedimage20231128113915.png)
 #### 6. 手动进行ns-3模块测试：
 **这一步依然是在ns-3.37文件夹下进行**
 ```unix
@@ -83,11 +86,11 @@ python3 download.py -n ns-3.37
 ```
 
 这会经历一个漫长的过程，形如：
-![[Pasted image 20231128114414.png]]
+![](pho/Pastedimage20231128114414.png)
 
 最后，看到这样的界面，说明搭建测试成功：
 
-![[Pasted image 20231128114803.png]]
+![](pho/Pastedimage20231128114803.png)
 #### 7. 自行检测是否安装成功：
 通常我们==在 ns3 的控制下运行脚本==。这样可以确保构建系统正确设置了共享库路径，并且在运行时库是可用的。
 
@@ -102,15 +105,14 @@ Hello Simulator
 Congratulations! You are now an ns-3 user!
 ```
 ##### ps：如果你没有看到输出怎么办？
-
-如果你看到 ns3 的消息表明构建成功，但是没有看到 "Hello Simulator" 的输出，很可能是你已经在 "Building with the ns3 CMake wrapper" 部分将构建模式切换为了优化模式，但是忘记了切回调试模式。在本教程中使用了一个特殊的 ns-3 日志组件来打印用户消息到控制台。在编译优化代码时，此组件的输出会自动禁用，即被“优化掉”。如果你没有看到 "Hello Simulator" 输出，请输入以下命令：
+如果你看到 ns3 的消息表明构建成功，但是没有看到 "Hello Simulator" 的输出，**很可能是你已经在 "Building with the ns3 CMake wrapper" 部分将构建模式切换为了优化模式，但是忘记了切回调试模式**。在本教程中使用了一个特殊的 ns-3 日志组件来打印用户消息到控制台。在编译优化代码时，此组件的输出会自动禁用，即被“优化掉”。如果你没有看到 "Hello Simulator" 输出，请输入以下命令：
 
 ```bash
 $ ./ns3 configure --build-profile=debug --enable-examples --enable-tests
 ```
 
 这告诉 ns3 构建调试版本的 ns-3 程序，包括示例和测试。
-![[Pasted image 20231128111959.png]]
+![](pho/Pastedimage20231128111959.png)
 
 然后，你仍然需要构建实际的调试版本代码，输入以下命令：
 
@@ -119,10 +121,13 @@ $ ./ns3
 ```
 
 这会经历一个漫长的过程，直到全部搭建完成：
-![[Pasted image 20231128115329.png]]
 
-现在，如果运行 `hello-simulator` 程序，你应该能看到预期的输出。
-![[Pasted image 20231128112135.png]]
+![](pho/Pastedimage20231128115329.png)
+
+现在，如果运行 `hello-simulator` 程序，你应该能看到预期的输出:
+
+![](pho/Pastedimage20231128112135.png)
+
 #### 8. 结语：
 1. 恭喜你，到了这里你就已经配置成功了！
 2. 不要忘了本文的配置顺序是渐进的，如果你留心的话会发现：./test.py之后跳出的部分显示之前配置的是**优化模式**；而后续./ns3 configure --build-profile=debug --enable-examples --enable-tests对应配置的是**调试模式**。在我们的日常科研中用到的基本是调试模式！
