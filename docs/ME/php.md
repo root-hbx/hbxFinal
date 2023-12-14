@@ -15,6 +15,11 @@
 ![2023全国计算机论坛合影photo2](./photo/luntan2.jpg)
 #### 单独拍一张
 ![2023全国计算机论坛合影photo2](./photo/luntan3.jpg)
+
+## 教育部第三届“提问与猜想”线下评审展示交流会开幕式
+![教育部photo1](./photo/jyb1.jpg)
+![教育部photo2](./photo/jyb2.jpg)
+
 ## 华为Ascend论坛
 ![2023华为论坛](./photo/huawei1.jpg)
 
