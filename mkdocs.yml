@@ -103,6 +103,9 @@ nav:
       - curriculum_study/Info-theory/lec12.md
       - curriculum_study/Info-theory/lec13.md
       - curriculum_study/Info-theory/lec14.md
+    - Algorithm_design:
+      - curriculum_study/Algorithm_XJTU/qimo_review.md
+      - curriculum_study/Algorithm_XJTU/qimo_big.md
 
   - 优秀论文整理:
     - sci/index.md
