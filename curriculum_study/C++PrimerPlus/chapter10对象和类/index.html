@@ -1,0 +1,5756 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="胡博瑄的学习网站">
+      
+      
+        <meta name="author" content="胡博瑄">
+      
+      
+        <link rel="canonical" href="https://github.com/root-hbx/curriculum_study/C%2B%2BPrimerPlus/chapter10%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/">
+      
+      
+        <link rel="prev" href="../chapter9%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E5%92%8C%E5%90%8D%E7%A7%B0%E7%A9%BA%E9%97%B4/">
+      
+      
+        <link rel="next" href="../chapter11%E4%BD%BF%E7%94%A8%E7%B1%BB/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Chapter10对象和类 - carrot_world</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../mkdocs/css/no-footer.css">
+    
+      <link rel="stylesheet" href="../../../mkdocs/css/unordered-list-symbols.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="carrot_world" class="md-header__button md-logo" aria-label="carrot_world" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            carrot_world
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter10对象和类
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/root-hbx" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GithubRepo_Of_hbx
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../LECTURE/" class="md-tabs__link">
+          
+  
+    
+  
+  基础运维知识
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../BLOG/" class="md-tabs__link">
+          
+  
+    
+  
+  常用开发简介
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  计算机课程整理
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../sci/" class="md-tabs__link">
+          
+  
+    
+  
+  优秀论文整理
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Sci_doc/" class="md-tabs__link">
+          
+  
+    
+  
+  科研软件指南
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ME/" class="md-tabs__link">
+          
+  
+    
+  
+  hbx是谁
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../HuSay/20231123/" class="md-tabs__link">
+          
+  
+    
+  
+  《胡说》
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="carrot_world" class="md-nav__button md-logo" aria-label="carrot_world" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    carrot_world
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/root-hbx" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GithubRepo_Of_hbx
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../LECTURE/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    基础运维知识
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            基础运维知识
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/Linux/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux讲座
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/Linux/commands-concise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    命令行入门精简版
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Markdown
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Markdown
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/Markdown/markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown讲座
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/Markdown/vscode-extension/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode及插件安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/Git/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/Git/git-demos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git例子
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/Git/git-teamwork/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git合作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/Git/windows-install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows安装Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    在macOS上用VSCode写C++代码
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            在macOS上用VSCode写C++代码
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/0_about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0 介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/1_%E5%89%8D%E8%A8%80%E5%92%8C%E8%AF%BE%E7%A8%8B%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 前言和课程说明
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/2_%E8%AE%A4%E8%AF%86macOS%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 认识macOS的文件系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/3_%E8%AE%A4%E8%AF%86%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 认识程序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/4_%E8%AE%A4%E8%AF%86%E7%BB%88%E7%AB%AF%E5%92%8Cshell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 认识终端和shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/5_%E5%BC%80%E5%90%AFVSCode%E7%9A%84%E5%A4%A7%E9%97%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 开启VSCode的大门
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/6_VSCode%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C%E8%87%AA%E5%8A%A8%E5%8C%96/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 VSCode代码运行自动化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/7_%E7%94%A8VSCode%E8%B0%83%E8%AF%95Cpp%E4%BB%A3%E7%A0%81/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 用VSCode调试Cpp代码
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/8_%E8%AF%BE%E7%A8%8B%E5%9B%9E%E9%A1%BE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 课程回顾
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/9_others/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    其他
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/10_%E6%9E%81%E9%80%9F%E7%89%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    极速版
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/vscode-cpp/11_%E8%A1%A5%E5%85%85/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    补充
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ns-3的配置
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            ns-3的配置
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/ns-3/ns3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    保姆级配置教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terminal_zsh
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            terminal_zsh
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LECTURE/terminal_zsh/oh_my_zsh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mac的终端优化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../BLOG/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    常用开发简介
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            常用开发简介
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/others/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    其他博客链接
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Markdown
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Markdown
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/Markdown/grammars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown 语法学习 精简版
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/Markdown/mkdocs-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish a Website with Material for MkDocs and GitHub Pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/Markdown/mdbook-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish a Website with mdBook and GitHub Pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/Markdown/github-pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/Linux/vim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vim 学习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/Linux/tmux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tmux 使用指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/Linux/unix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unix and Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/Linux/kernel-compile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux 内核编译尝试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/Linux/pi-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    树莓派入门指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/OS/fork-exec-spawn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fork/exec/spawn 辨析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BLOG/OS/fork-example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fork 例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    计算机课程整理
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            计算机课程整理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C++PrimerPlus
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            C++PrimerPlus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter2%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0c%2B%2B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter2开始学习c++
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter3%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter3处理数据
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter4%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter4复合类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter5%E5%BE%AA%E7%8E%AF%E4%B8%8E%E5%85%B3%E7%B3%BB%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter5循环与关系表达式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter6%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter6分支语句与逻辑运算符
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter7%E5%87%BD%E6%95%B0-c%2B%2B%E7%9A%84%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter7函数 c++的编程模块
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter8%E5%87%BD%E6%95%B0%E6%8E%A2%E5%B9%BD%28%E4%B8%8A%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter8函数探幽(上)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter8%E5%87%BD%E6%95%B0%E6%8E%A2%E5%B9%BD%28%E4%B8%8B%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter8函数探幽(下)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter9%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E5%92%8C%E5%90%8D%E7%A7%B0%E7%A9%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter9内存模型和名称空间
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapter10对象和类
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chapter10对象和类
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1）类规范
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2）类的基本成分
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3）实现类的成员函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4）类的构造函数和析构函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4）类的构造函数和析构函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      【1】问题引入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      【2】构造函数格式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      【3】使用构造函数初始化对象
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      【4】默认构造函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      【5】析构函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      【6】综合示例分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stock1cpp-stock-class-implementation-with-constructors-destructor-added-include-iostream-include-stock10h-constructors-verbose-versions-stockstock-default-constructor-stdcout-default-constructor-calledn-company-no-name-shares-0-share_val-00-total_val-00-stockstockconst-stdstring-co-long-n-double-pr-stdcout-constructor-using-co-calledn-company-co-if-n-0-stdcout-number-of-shares-cant-be-negative-company-shares-set-to-0n-shares-0-else-shares-n-share_val-pr-set_tot-class-destructor-stockstock-verbose-class-destructor-stdcout-bye-company-n-other-methods-void-stockbuylong-num-double-price-if-num-0-stdcout-number-of-shares-purchased-cant-be-negative-transaction-is-abortedn-else-shares-num-share_val-price-set_tot-void-stockselllong-num-double-price-using-stdcout-if-num-0-cout-number-of-shares-sold-cant-be-negative-transaction-is-abortedn-else-if-num-shares-cout-you-cant-sell-more-than-you-have-transaction-is-abortedn-else-shares-num-share_val-price-set_tot-void-stockupdatedouble-price-share_val-price-set_tot-void-stockshow-using-stdcout-using-stdios_base-set-format-to-ios_basefmtflags-orig-coutsetfios_basefixed-ios_basefloatfield-stdstreamsize-prec-coutprecision3-cout-company-company-shares-shares-n-cout-share-price-share_val-set-format-to-coutprecision2-cout-total-worth-total_val-n-restore-original-format-coutsetforig-ios_basefloatfield-coutprecisionprec" class="md-nav__link">
+    <span class="md-ellipsis">
+      // stock1.cpp � Stock class implementation with constructors, destructor added
+#include &lt;iostream&gt;
+#include &quot;stock10.h&quot;
+// constructors (verbose versions)
+Stock::Stock()        // default constructor
+{
+    std::cout &lt;&lt; &quot;Default constructor called\n&quot;;
+    company = &quot;no name&quot;;
+    shares = 0;
+    share_val = 0.0;
+    total_val = 0.0;
+}
+
+Stock::Stock(const std::string &amp; co, long n, double pr)
+{
+    std::cout &lt;&lt; &quot;Constructor using &quot; &lt;&lt; co &lt;&lt; &quot; called\n&quot;;
+    company = co;
+    if (n &lt; 0)
+    {
+        std::cout &lt;&lt; &quot;Number of shares can&#39;t be negative; &quot;
+                   &lt;&lt; company &lt;&lt; &quot; shares set to 0.\n&quot;;
+        shares = 0;
+    }
+    else
+        shares = n;
+    share_val = pr;
+    set_tot();
+}
+
+// class destructor
+Stock::~Stock()        // verbose class destructor
+{
+    std::cout &lt;&lt; &quot;Bye, &quot; &lt;&lt; company &lt;&lt; &quot;!\n&quot;;
+}
+
+// other methods
+void Stock::buy(long num, double price)
+{
+     if (num &lt; 0)
+    {
+        std::cout &lt;&lt; &quot;Number of shares purchased can&#39;t be negative. &quot;
+             &lt;&lt; &quot;Transaction is aborted.\n&quot;;
+    }
+    else
+    {
+        shares += num;
+        share_val = price;
+        set_tot();
+    }
+}
+
+void Stock::sell(long num, double price)
+{
+    using std::cout;
+    if (num &lt; 0)
+    {
+        cout &lt;&lt; &quot;Number of shares sold can&#39;t be negative. &quot;
+             &lt;&lt; &quot;Transaction is aborted.\n&quot;;
+    }
+    else if (num &gt; shares)
+    {
+        cout &lt;&lt; &quot;You can&#39;t sell more than you have! &quot;
+             &lt;&lt; &quot;Transaction is aborted.\n&quot;;
+    }
+    else
+    {
+        shares -= num;
+        share_val = price;
+        set_tot();
+    }
+}
+
+void Stock::update(double price)
+{
+    share_val = price;
+    set_tot();
+}
+
+void Stock::show()
+{
+    using std::cout;
+    using std::ios_base;
+    // set format to #.###
+    ios_base::fmtflags orig =
+        cout.setf(ios_base::fixed, ios_base::floatfield);
+    std::streamsize prec = cout.precision(3);
+    cout &lt;&lt; &quot;Company: &quot; &lt;&lt; company
+        &lt;&lt; &quot;  Shares: &quot; &lt;&lt; shares &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; &quot;  Share Price: $&quot; &lt;&lt; share_val;
+    // set format to #.##
+    cout.precision(2);
+    cout &lt;&lt; &quot;  Total Worth: $&quot; &lt;&lt; total_val &lt;&lt; &#39;\n&#39;;
+    // restore original format
+    cout.setf(orig, ios_base::floatfield);
+    cout.precision(prec);
+}
+
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usestok1cpp-using-the-stock-class-compile-with-stock10cpp-include-iostream-include-stock10h-int-main-using-stdcout-cout-using-constructors-to-create-new-objectsn-stock-stock1nanosmart-12-200-syntax-1-stock1show-stock-stock2-stock-boffo-objects-2-20-syntax-2-stock2show-cout-assigning-stock1-to-stock2n-stock2-stock1-cout-listing-stock1-and-stock2n-stock1show-stock2show-cout-using-a-constructor-to-reset-an-objectn-stock1-stocknifty-foods-10-500-temp-object-cout-revised-stock1n-stock1show-cout-donen-stdcinget-return-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      // usestok1.cpp -- using the Stock class
+// compile with stock10.cpp
+#include &lt;iostream&gt;
+#include &quot;stock10.h&quot;
+int main()
+{
+  {
+    using std::cout;
+    cout &lt;&lt; &quot;Using constructors to create new objects\n&quot;;
+    Stock stock1(&quot;NanoSmart&quot;, 12, 20.0);            // syntax 1
+    stock1.show();
+    Stock stock2 = Stock (&quot;Boffo Objects&quot;, 2, 2.0); // syntax 2
+    stock2.show();
+
+    cout &lt;&lt; &quot;Assigning stock1 to stock2:\n&quot;;
+    stock2 = stock1;
+    cout &lt;&lt; &quot;Listing stock1 and stock2:\n&quot;;
+    stock1.show();
+    stock2.show();
+
+    cout &lt;&lt; &quot;Using a constructor to reset an object\n&quot;;
+    stock1 = Stock(&quot;Nifty Foods&quot;, 10, 50.0);    // temp object
+    cout &lt;&lt; &quot;Revised stock1:\n&quot;;
+    stock1.show();
+    cout &lt;&lt; &quot;Done\n&quot;;
+  }
+    // std::cin.get();
+    return 0;
+}
+
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="// usestok1.cpp -- using the Stock class // compile with stock10.cpp #include <iostream> #include "stock10.h" int main() { { using std::cout; cout << "Using constructors to create new objects\n"; Stock stock1("NanoSmart", 12, 20.0); // syntax 1 stock1.show(); Stock stock2 = Stock ("Boffo Objects", 2, 2.0); // syntax 2 stock2.show(); cout << "Assigning stock1 to stock2:\n"; stock2 = stock1; cout << "Listing stock1 and stock2:\n"; stock1.show(); stock2.show(); cout << "Using a constructor to reset an object\n"; stock1 = Stock("Nifty Foods", 10, 50.0); // temp object cout << "Revised stock1:\n"; stock1.show(); cout << "Done\n"; } // std::cin.get(); return 0; }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5this" class="md-nav__link">
+    <span class="md-ellipsis">
+      5）this指针
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      6）对象数组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7）类作用域
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8adt" class="md-nav__link">
+    <span class="md-ellipsis">
+      8）抽象数据类型（ADT）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stackcpp-stack-member-functions-include-stackh-stackstack-create-an-empty-stack-top-0-bool-stackisempty-const-return-top-0-bool-stackisfull-const-return-top-max-bool-stackpushconst-item-item-if-top-max-itemstop-item-return-true-else-return-false-bool-stackpopitem-item-if-top-0-item-items-top-return-true-else-return-false" class="md-nav__link">
+    <span class="md-ellipsis">
+      // stack.cpp -- Stack member functions
+#include &quot;stack.h&quot;
+Stack::Stack()    // create an empty stack
+{
+    top = 0;
+}
+
+bool Stack::isempty() const
+{
+    return top == 0;
+}
+
+bool Stack::isfull() const
+{
+    return top == MAX;
+}
+
+bool Stack::push(const Item &amp; item)
+{
+    if (top &lt; MAX)
+    {
+        items[top++] = item;
+        return true;
+    }
+    else
+        return false;
+}
+
+bool Stack::pop(Item &amp; item)
+{
+    if (top &gt; 0)
+    {
+        item = items[--top];
+        return true;
+    }
+    else
+        return false;
+}
+
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11%E4%BD%BF%E7%94%A8%E7%B1%BB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter11使用类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12%E7%B1%BB%E5%92%8C%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter12类和动态内存分配
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter13%E7%B1%BB%E7%BB%A7%E6%89%BF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter13类继承
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter14c%2B%2B%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E9%87%8D%E7%94%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter14c++中的代码重用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter15%E5%8F%8B%E5%85%83%E3%80%81%E5%BC%82%E5%B8%B8%E5%92%8C%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter15友元、异常和其他
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter16string%E7%B1%BB%E5%92%8C%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter16string类和标准模板库
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter17%E8%BE%93%E5%85%A5%E3%80%81%E8%BE%93%E5%87%BA%E5%92%8C%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter17输入、输出和文件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter18%E6%8E%A2%E8%AE%A8c%2B%2B%E6%96%B0%E6%A0%87%E5%87%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter18探讨c++新标准
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CSAPP_(CMU)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            CSAPP_(CMU)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSAPP_CMU/%E5%B8%B8%E8%A7%81%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常见汇编指令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSAPP_CMU/chapter2_%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter2 信息的表示和处理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSAPP_CMU/chapter3_%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter3 程序的机器级表示
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSAPP_CMU/chapter5_%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter5 优化程序性能
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSAPP_CMU/chapter6_%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter6 存储器的层次结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CSAPP_CMU/chapter7_%E9%93%BE%E6%8E%A5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter7 链接
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TD_net
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            TD_net
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD_net/ch1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter1 计算机网络概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD_net/ch2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter2 应用层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD_net/ch3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter3 传输层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD_net/ch4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter4 网络层：数据平面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD_net/ch5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter5 网络层：控制平面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TD_net/ch6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter6 链路层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Info-theory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Info-theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture3 - AEP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture4 - Entropy Rate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture5 - Data Compression Part1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture6 - Data Compression Part2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture7 - Data Compression Part3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture8 - Channel Capacity Part1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture9 - Channel Capacity Part2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture10 - Channel Capacity Part3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture11 - Differential Entropy Part1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture12 - Differential Entropy Part2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture13 - Gaussian Channel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Info-theory/lec14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture14 - 笔者对于部分基础概念的整理复习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algorithm_design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm_design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm_XJTU/qimo_review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    期末备考指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm_XJTU/qimo_big/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常考算法模板
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm_XJTU/qimo_exe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    考前小练习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../sci/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    优秀论文整理
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            优秀论文整理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_1" id="__nav_4_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RDMA_over_Commodity_Ethernet_at_Scale
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            RDMA_over_Commodity_Ethernet_at_Scale
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale%28Abstruct%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDMA over Commodity Ethernet at Scale(Abstruct)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale%28Background%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDMA over Commodity Ethernet at Scale(Background)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale%28Introduction%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDMA over Commodity Ethernet at Scale(Introduction)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale%28Conclusion%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDMA over Commodity Ethernet at Scale(Conclusion)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/3_DSCP-BASED%20PFC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 DSCP BASED PFC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/4.1_RDMA_transport_livelock%28%E4%BC%A0%E8%BE%93%E6%B4%BB%E9%94%81%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 RDMA transport livelock(传输活锁)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/4.2_PFC%20Deadlock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 PFC Deadlock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/4.3_NIC_PFC_pause_frame_storm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 NIC PFC pause frame storm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/4.4_The_Slow-receiver_symptom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 The Slow receiver symptom
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/5_RDMA_In_Production/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 RDMA In Production
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/6_EXPERIENCES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 EXPERIENCES
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/7_RELATED%20WORK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 RELATED WORK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/8_CONCLUSION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 CONCLUSION
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/%E2%80%9C%E8%AF%BB%E5%90%8E%E6%84%9F%E2%80%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    “读后感”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/RDMA_over_Commodity_Ethernet_at_Scale/issue_thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Issue thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_2" id="__nav_4_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ICDCS23_Less_is_More_Dynamic_and_Shared_Headroom_Allocation_in_PFC-enabled_Datacenter_Networks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            ICDCS23_Less_is_More_Dynamic_and_Shared_Headroom_Allocation_in_PFC-enabled_Datacenter_Networks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/LessIsMore/LessIsMore_Abstruct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Abstruct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/LessIsMore/LessIsMore_Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/LessIsMore/LessIsMore_Background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Background
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/LessIsMore/LessIsMore_Motivation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motivation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/LessIsMore/LessIsMore_DSH_Design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DSH_Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/LessIsMore/LessIsMore_Evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/LessIsMore/LessIsMore_RelatedWork/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Related Work
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/LessIsMore/LessIsMore_Conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/LessIsMore/%E6%95%B4%E7%90%86%E4%B8%8E%E6%80%9D%E8%80%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    整理与思考
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Sci_doc/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    科研软件指南
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            科研软件指南
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ns-3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            ns-3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sci_doc/ns-3/ch0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0 ns-3及其基础配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sci_doc/ns-3/ch1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 入门程序解析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sci_doc/ns-3/ch2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 显示结果的优化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sci_doc/ns-3/ch3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 模拟建立拓扑结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sci_doc/ns-3/ch4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 ns-3_tracing的全部实现机理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sci_doc/ns-3/ch5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 ns-3_Data-Collection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ME/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    hbx是谁
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            hbx是谁
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ME/description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    个人特点
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ME/ability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    个人能力
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ME/experience/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    个人经历
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ME/php/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    有意义的照片
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    《胡说》
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            《胡说》
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HuSay/20231123/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ”慢思考“之我见
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1）类规范
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2）类的基本成分
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3）实现类的成员函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4）类的构造函数和析构函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4）类的构造函数和析构函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      【1】问题引入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      【2】构造函数格式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      【3】使用构造函数初始化对象
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      【4】默认构造函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      【5】析构函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      【6】综合示例分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stock1cpp-stock-class-implementation-with-constructors-destructor-added-include-iostream-include-stock10h-constructors-verbose-versions-stockstock-default-constructor-stdcout-default-constructor-calledn-company-no-name-shares-0-share_val-00-total_val-00-stockstockconst-stdstring-co-long-n-double-pr-stdcout-constructor-using-co-calledn-company-co-if-n-0-stdcout-number-of-shares-cant-be-negative-company-shares-set-to-0n-shares-0-else-shares-n-share_val-pr-set_tot-class-destructor-stockstock-verbose-class-destructor-stdcout-bye-company-n-other-methods-void-stockbuylong-num-double-price-if-num-0-stdcout-number-of-shares-purchased-cant-be-negative-transaction-is-abortedn-else-shares-num-share_val-price-set_tot-void-stockselllong-num-double-price-using-stdcout-if-num-0-cout-number-of-shares-sold-cant-be-negative-transaction-is-abortedn-else-if-num-shares-cout-you-cant-sell-more-than-you-have-transaction-is-abortedn-else-shares-num-share_val-price-set_tot-void-stockupdatedouble-price-share_val-price-set_tot-void-stockshow-using-stdcout-using-stdios_base-set-format-to-ios_basefmtflags-orig-coutsetfios_basefixed-ios_basefloatfield-stdstreamsize-prec-coutprecision3-cout-company-company-shares-shares-n-cout-share-price-share_val-set-format-to-coutprecision2-cout-total-worth-total_val-n-restore-original-format-coutsetforig-ios_basefloatfield-coutprecisionprec" class="md-nav__link">
+    <span class="md-ellipsis">
+      // stock1.cpp � Stock class implementation with constructors, destructor added
+#include &lt;iostream&gt;
+#include &quot;stock10.h&quot;
+// constructors (verbose versions)
+Stock::Stock()        // default constructor
+{
+    std::cout &lt;&lt; &quot;Default constructor called\n&quot;;
+    company = &quot;no name&quot;;
+    shares = 0;
+    share_val = 0.0;
+    total_val = 0.0;
+}
+
+Stock::Stock(const std::string &amp; co, long n, double pr)
+{
+    std::cout &lt;&lt; &quot;Constructor using &quot; &lt;&lt; co &lt;&lt; &quot; called\n&quot;;
+    company = co;
+    if (n &lt; 0)
+    {
+        std::cout &lt;&lt; &quot;Number of shares can&#39;t be negative; &quot;
+                   &lt;&lt; company &lt;&lt; &quot; shares set to 0.\n&quot;;
+        shares = 0;
+    }
+    else
+        shares = n;
+    share_val = pr;
+    set_tot();
+}
+
+// class destructor
+Stock::~Stock()        // verbose class destructor
+{
+    std::cout &lt;&lt; &quot;Bye, &quot; &lt;&lt; company &lt;&lt; &quot;!\n&quot;;
+}
+
+// other methods
+void Stock::buy(long num, double price)
+{
+     if (num &lt; 0)
+    {
+        std::cout &lt;&lt; &quot;Number of shares purchased can&#39;t be negative. &quot;
+             &lt;&lt; &quot;Transaction is aborted.\n&quot;;
+    }
+    else
+    {
+        shares += num;
+        share_val = price;
+        set_tot();
+    }
+}
+
+void Stock::sell(long num, double price)
+{
+    using std::cout;
+    if (num &lt; 0)
+    {
+        cout &lt;&lt; &quot;Number of shares sold can&#39;t be negative. &quot;
+             &lt;&lt; &quot;Transaction is aborted.\n&quot;;
+    }
+    else if (num &gt; shares)
+    {
+        cout &lt;&lt; &quot;You can&#39;t sell more than you have! &quot;
+             &lt;&lt; &quot;Transaction is aborted.\n&quot;;
+    }
+    else
+    {
+        shares -= num;
+        share_val = price;
+        set_tot();
+    }
+}
+
+void Stock::update(double price)
+{
+    share_val = price;
+    set_tot();
+}
+
+void Stock::show()
+{
+    using std::cout;
+    using std::ios_base;
+    // set format to #.###
+    ios_base::fmtflags orig =
+        cout.setf(ios_base::fixed, ios_base::floatfield);
+    std::streamsize prec = cout.precision(3);
+    cout &lt;&lt; &quot;Company: &quot; &lt;&lt; company
+        &lt;&lt; &quot;  Shares: &quot; &lt;&lt; shares &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; &quot;  Share Price: $&quot; &lt;&lt; share_val;
+    // set format to #.##
+    cout.precision(2);
+    cout &lt;&lt; &quot;  Total Worth: $&quot; &lt;&lt; total_val &lt;&lt; &#39;\n&#39;;
+    // restore original format
+    cout.setf(orig, ios_base::floatfield);
+    cout.precision(prec);
+}
+
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usestok1cpp-using-the-stock-class-compile-with-stock10cpp-include-iostream-include-stock10h-int-main-using-stdcout-cout-using-constructors-to-create-new-objectsn-stock-stock1nanosmart-12-200-syntax-1-stock1show-stock-stock2-stock-boffo-objects-2-20-syntax-2-stock2show-cout-assigning-stock1-to-stock2n-stock2-stock1-cout-listing-stock1-and-stock2n-stock1show-stock2show-cout-using-a-constructor-to-reset-an-objectn-stock1-stocknifty-foods-10-500-temp-object-cout-revised-stock1n-stock1show-cout-donen-stdcinget-return-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      // usestok1.cpp -- using the Stock class
+// compile with stock10.cpp
+#include &lt;iostream&gt;
+#include &quot;stock10.h&quot;
+int main()
+{
+  {
+    using std::cout;
+    cout &lt;&lt; &quot;Using constructors to create new objects\n&quot;;
+    Stock stock1(&quot;NanoSmart&quot;, 12, 20.0);            // syntax 1
+    stock1.show();
+    Stock stock2 = Stock (&quot;Boffo Objects&quot;, 2, 2.0); // syntax 2
+    stock2.show();
+
+    cout &lt;&lt; &quot;Assigning stock1 to stock2:\n&quot;;
+    stock2 = stock1;
+    cout &lt;&lt; &quot;Listing stock1 and stock2:\n&quot;;
+    stock1.show();
+    stock2.show();
+
+    cout &lt;&lt; &quot;Using a constructor to reset an object\n&quot;;
+    stock1 = Stock(&quot;Nifty Foods&quot;, 10, 50.0);    // temp object
+    cout &lt;&lt; &quot;Revised stock1:\n&quot;;
+    stock1.show();
+    cout &lt;&lt; &quot;Done\n&quot;;
+  }
+    // std::cin.get();
+    return 0;
+}
+
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="// usestok1.cpp -- using the Stock class // compile with stock10.cpp #include <iostream> #include "stock10.h" int main() { { using std::cout; cout << "Using constructors to create new objects\n"; Stock stock1("NanoSmart", 12, 20.0); // syntax 1 stock1.show(); Stock stock2 = Stock ("Boffo Objects", 2, 2.0); // syntax 2 stock2.show(); cout << "Assigning stock1 to stock2:\n"; stock2 = stock1; cout << "Listing stock1 and stock2:\n"; stock1.show(); stock2.show(); cout << "Using a constructor to reset an object\n"; stock1 = Stock("Nifty Foods", 10, 50.0); // temp object cout << "Revised stock1:\n"; stock1.show(); cout << "Done\n"; } // std::cin.get(); return 0; }">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5this" class="md-nav__link">
+    <span class="md-ellipsis">
+      5）this指针
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      6）对象数组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7）类作用域
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8adt" class="md-nav__link">
+    <span class="md-ellipsis">
+      8）抽象数据类型（ADT）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stackcpp-stack-member-functions-include-stackh-stackstack-create-an-empty-stack-top-0-bool-stackisempty-const-return-top-0-bool-stackisfull-const-return-top-max-bool-stackpushconst-item-item-if-top-max-itemstop-item-return-true-else-return-false-bool-stackpopitem-item-if-top-0-item-items-top-return-true-else-return-false" class="md-nav__link">
+    <span class="md-ellipsis">
+      // stack.cpp -- Stack member functions
+#include &quot;stack.h&quot;
+Stack::Stack()    // create an empty stack
+{
+    top = 0;
+}
+
+bool Stack::isempty() const
+{
+    return top == 0;
+}
+
+bool Stack::isfull() const
+{
+    return top == MAX;
+}
+
+bool Stack::push(const Item &amp; item)
+{
+    if (top &lt; MAX)
+    {
+        items[top++] = item;
+        return true;
+    }
+    else
+        return false;
+}
+
+bool Stack::pop(Item &amp; item)
+{
+    if (top &gt; 0)
+    {
+        item = items[--top];
+        return true;
+    }
+    else
+        return false;
+}
+
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/root-hbx/edit/main/docs/curriculum_study/C++PrimerPlus/chapter10对象和类.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Chapter10对象和类</h1>
+
+<h3 id="1">1）类规范<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>【1】类声明：数据成员（描述数据部分）+ 成员函数（描述公有接口）
+【2】类方法定义：描述如何实现类成员函数</p>
+<p>ps： 何为 ”接口“？
+![[Pasted image 20230730094108.png]]
+![[Pasted image 20230730094124.png]]</p>
+<h3 id="2">2）类的基本成分<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>[1]基本示例：
+<div class="highlight"><pre><span></span><code><span class="c1">// stock00.h -- Stock class interface</span>
+<span class="c1">// version 00</span>
+
+<span class="cp">#ifndef STOCK00_H_</span>
+<span class="cp">#define STOCK00_H_</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="c1">  </span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Stock</span><span class="w">  </span><span class="c1">// class declaration</span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">company</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">shares</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">share_val</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">total_val</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">set_tot</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">total_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shares</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">share_val</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">acquire</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">co</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pr</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">buy</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sell</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">show</span><span class="p">();</span>
+<span class="p">};</span><span class="w">    </span><span class="c1">// note semicolon at the end</span>
+<span class="cp">#endif</span>
+</code></pre></div>
+[2]详细介绍：
+（1）class 指出这些代码给出了一个类设计
+（2）要存储的数据以类数据成员 (如变量company...) 的形式出现
+（3）要执行的操作以类函数成员 (方法，如 sell( ) 和 update( )   )
+（4）成员函数可以就地定义（ set_tot( ) ），也可以原型表示（ buy(...)；sell(...) ）</p>
+<p>[3]访问控制：
+（1）使用类对象的程序都可以直接访问公有部分
+（2）但只能通过公有成员函数( 或 友元函数 )来访问对象的私有成员</p>
+<blockquote>
+<p>ps：类与结构
+结构的默认访问类型是public，而类为private</p>
+</blockquote>
+<h3 id="3">3）实现类的成员函数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>（1）定义成员函数（也叫作：方法）是用：作用域解析运算符( : : ) 实现的
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">Stock</span><span class="o">::</span><span class="n">update</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="n">意味着</span><span class="w"> </span><span class="n">update</span><span class="p">()</span><span class="w"> </span><span class="n">函数是</span><span class="w"> </span><span class="n">Stock类</span><span class="w"> </span><span class="n">的成员</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="n">Stock类中的其他成员函数不必要使用</span><span class="w"> </span><span class="o">::</span><span class="w"> </span><span class="n">就可以使用</span><span class="w"> </span><span class="n">update</span><span class="p">()</span><span class="w"> </span><span class="n">方法</span><span class="err">【</span><span class="n">这是因为它们属于同一个类</span><span class="err">，</span><span class="n">因此</span><span class="w"> </span><span class="n">update</span><span class="p">()</span><span class="w"> </span><span class="n">可见</span><span class="err">】</span>
+</code></pre></div></p>
+<p>（2）方法 可以访问类的私有成员，但是非成员函数不可以（友元函数除外！）
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">show</span><span class="p">()</span><span class="w"> </span><span class="c1">//是类的成员函数</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">company</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shares</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">share_val</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">total_val</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>（3）内联方法
+<strong>定义位于类声明的函数</strong> 都将自动成为 <strong>内联函数</strong>
+eg：上述类Stock中的 Stock : : set_tot( )是一个内联函数</p>
+<blockquote>
+<p>ps : 如果愿意也可以在类声明之外定义成员函数，并使其成为内联函数
+方式：在类实现部分定义函数时使用<strong>inline</strong>限定符即可
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Stock</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">set_tot</span><span class="p">()</span><span class="w"> </span><span class="c1">// declaration</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">};</span>
+
+<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Stock::set_tot</span><span class="p">()</span><span class="w"> </span><span class="c1">// use inline in definition</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">total_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shares</span><span class="o">*</span><span class="n">share_val</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</blockquote>
+<p>（4）创建 and 使用对象
+【1】所创建的每个新对象都有自己的存储空间，用于存储其内部变量和类成员
+【2】同一个类的所有对象共享同一组类方法，即：每种方法只有一个副本
+eg：kate 和 joe 都是Stock对象，则 kate.shares 占一个内存块， joe.shares 占另一个内存快。但是 kate.show( ) 和 joe.show( ) 都调用同一个方法，也就是说： kate.show( ) 和 joe.show( ) 都执行同一个代码块，只是将这些代码方法用于不同的数据
+![[Pasted image 20230730104821.png]]</p>
+<h3 id="4">4）类的构造函数和析构函数<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<h5 id="1_1">【1】问题引入<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h5>
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Stock</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">......</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">pn</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">node</span><span class="w"> </span><span class="n">amaoob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;hhh&quot;</span><span class="p">,</span><span class="mi">23</span><span class="p">};</span><span class="w">  </span><span class="c1">// valid</span>
+<span class="n">Stock</span><span class="w"> </span><span class="n">hbx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;jjj&quot;</span><span class="p">,</span><span class="mi">6</span><span class="p">};</span><span class="w">     </span><span class="c1">// invalid</span>
+</code></pre></div>
+不能像上面这样初始化Stock对象，原因在于：类的数据部分访问状态是私有的，这意味着程序不能直接访问数据成员
+因此需要设计合适的成员函数——构造函数</p>
+<h5 id="2_1">【2】构造函数格式<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h5>
+<p><div class="highlight"><pre><span></span><code><span class="n">Stock</span><span class="o">::</span><span class="n">Stock</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">co</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">co</span><span class="p">;</span>
+<span class="w">    </span><span class="p">......</span>
+<span class="p">}</span>
+<span class="c1">// 程序声明对象时，就将自动调用构造函数！</span>
+</code></pre></div>
+![[Pasted image 20230730110623.png]]
+![[Pasted image 20230730110635.png]]</p>
+<h5 id="3_1">【3】使用构造函数初始化对象<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h5>
+<p>（1）显式地调用构造函数：
+<div class="highlight"><pre><span></span><code><span class="n">Stock</span><span class="w"> </span><span class="n">food</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stock</span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mf">1.1</span><span class="p">);</span>
+</code></pre></div>
+原理：允许调用构造函数来创建一个临时对象，然后将该临时对象复制到stock2中，并丢弃它【会为临时对象调用析构函数】</p>
+<p>（2）隐式地调用构造函数：
+<div class="highlight"><pre><span></span><code><span class="n">Stock</span><span class="w"> </span><span class="n">food</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mf">1.1</span><span class="p">);</span>
+</code></pre></div>
+直接初始化</p>
+<p>（<em>poi</em>）创建类对象 + new动态内存分配：
+<div class="highlight"><pre><span></span><code><span class="n">Stock</span><span class="w"> </span><span class="o">*</span><span class="n">food</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stock</span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="mf">1.1</span><span class="p">);</span>
+
+<span class="n">过程</span><span class="err">：</span>
+<span class="mi">1</span><span class="err">）</span><span class="n">创建一个Stock对象</span><span class="err">，</span><span class="n">将其初始化为参数提供的值</span>
+<span class="mi">2</span><span class="err">）</span><span class="n">并将该对象地址赋给food指针</span>
+</code></pre></div></p>
+<h5 id="4_1">【4】默认构造函数<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h5>
+<p>方法1：给已有的构造函数的所有参数提供默认值
+<div class="highlight"><pre><span></span><code><span class="n">Stock</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">co</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;error&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
+</code></pre></div></p>
+<p>方法2：函数重载定义另一个构造函数
+<div class="highlight"><pre><span></span><code><span class="n">Stock</span><span class="p">();</span>
+
+<span class="n">Stock</span><span class="o">::</span><span class="n">Stock</span><span class="p">()</span><span class="w">    </span><span class="c1">// default constructor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;no name&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">shares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">share_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">total_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>eg:
+<div class="highlight"><pre><span></span><code><span class="n">Stock</span><span class="w"> </span><span class="n">first</span><span class="p">;</span><span class="w">                 </span><span class="c1">// implicitly(隐式具体化)</span>
+<span class="n">Stock</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stock</span><span class="p">();</span><span class="w">       </span><span class="c1">// explicitly(显式具体化)</span>
+<span class="n">Stock</span><span class="w"> </span><span class="o">*</span><span class="n">prelief</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stock</span><span class="p">;</span><span class="w">  </span><span class="c1">// implicitly</span>
+
+<span class="n">Stock</span><span class="w"> </span><span class="n">first</span><span class="p">(</span><span class="s">&quot;bcgsadkhcfa&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// calls constructor</span>
+<span class="n">Stock</span><span class="w"> </span><span class="n">second</span><span class="p">;</span><span class="w">                </span><span class="c1">// default constructor(默认构造函数)</span>
+</code></pre></div></p>
+<h5 id="5">【5】析构函数<a class="headerlink" href="#5" title="Permanent link">&para;</a></h5>
+<p>（1）引入：析构函数负责完成清理工作
+eg：如果构造函数使用new来分配内存，则析构函数将使用delete来释放这些内存</p>
+<p>（2）格式：类名前加上~【跟构造函数一样，没有返回值和声明类型】</p>
+<blockquote>
+<p>poi：==析构函数没有参数==
+eg：Stock类的析构函数原型，必须是：  ~Stock()</p>
+</blockquote>
+<h5 id="6">【6】综合示例分析<a class="headerlink" href="#6" title="Permanent link">&para;</a></h5>
+<h2 id="stock1cpp-stock-class-implementation-with-constructors-destructor-added-include-iostream-include-stock10h-constructors-verbose-versions-stockstock-default-constructor-stdcout-default-constructor-calledn-company-no-name-shares-0-share_val-00-total_val-00-stockstockconst-stdstring-co-long-n-double-pr-stdcout-constructor-using-co-calledn-company-co-if-n-0-stdcout-number-of-shares-cant-be-negative-company-shares-set-to-0n-shares-0-else-shares-n-share_val-pr-set_tot-class-destructor-stockstock-verbose-class-destructor-stdcout-bye-company-n-other-methods-void-stockbuylong-num-double-price-if-num-0-stdcout-number-of-shares-purchased-cant-be-negative-transaction-is-abortedn-else-shares-num-share_val-price-set_tot-void-stockselllong-num-double-price-using-stdcout-if-num-0-cout-number-of-shares-sold-cant-be-negative-transaction-is-abortedn-else-if-num-shares-cout-you-cant-sell-more-than-you-have-transaction-is-abortedn-else-shares-num-share_val-price-set_tot-void-stockupdatedouble-price-share_val-price-set_tot-void-stockshow-using-stdcout-using-stdios_base-set-format-to-ios_basefmtflags-orig-coutsetfios_basefixed-ios_basefloatfield-stdstreamsize-prec-coutprecision3-cout-company-company-shares-shares-n-cout-share-price-share_val-set-format-to-coutprecision2-cout-total-worth-total_val-n-restore-original-format-coutsetforig-ios_basefloatfield-coutprecisionprec"><div class="highlight"><pre><span></span><code><span class="c1">// stock1.cpp � Stock class implementation with constructors, destructor added</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stock10.h&quot;</span>
+<span class="c1">// constructors (verbose versions)</span>
+<span class="n">Stock</span><span class="o">::</span><span class="n">Stock</span><span class="p">()</span><span class="w">        </span><span class="c1">// default constructor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Default constructor called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;no name&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">shares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">share_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">total_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Stock</span><span class="o">::</span><span class="n">Stock</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">co</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pr</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Constructor using &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">co</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; called</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">co</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Number of shares can&#39;t be negative; &quot;</span>
+<span class="w">                   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">company</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; shares set to 0.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">shares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">shares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">share_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pr</span><span class="p">;</span>
+<span class="w">    </span><span class="n">set_tot</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// class destructor</span>
+<span class="n">Stock</span><span class="o">::~</span><span class="n">Stock</span><span class="p">()</span><span class="w">        </span><span class="c1">// verbose class destructor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Bye, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">company</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// other methods</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">Stock</span><span class="o">::</span><span class="n">buy</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Number of shares purchased can&#39;t be negative. &quot;</span>
+<span class="w">             </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Transaction is aborted.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">shares</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="w">        </span><span class="n">share_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">        </span><span class="n">set_tot</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Stock</span><span class="o">::</span><span class="n">sell</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Number of shares sold can&#39;t be negative. &quot;</span>
+<span class="w">             </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Transaction is aborted.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">shares</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;You can&#39;t sell more than you have! &quot;</span>
+<span class="w">             </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Transaction is aborted.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">shares</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="w">        </span><span class="n">share_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">        </span><span class="n">set_tot</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Stock</span><span class="o">::</span><span class="n">update</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">share_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">    </span><span class="n">set_tot</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">Stock</span><span class="o">::</span><span class="n">show</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ios_base</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// set format to #.###</span>
+<span class="w">    </span><span class="n">ios_base</span><span class="o">::</span><span class="n">fmtflags</span><span class="w"> </span><span class="n">orig</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">cout</span><span class="p">.</span><span class="n">setf</span><span class="p">(</span><span class="n">ios_base</span><span class="o">::</span><span class="n">fixed</span><span class="p">,</span><span class="w"> </span><span class="n">ios_base</span><span class="o">::</span><span class="n">floatfield</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">streamsize</span><span class="w"> </span><span class="n">prec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cout</span><span class="p">.</span><span class="n">precision</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Company: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">company</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  Shares: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shares</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  Share Price: $&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">share_val</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// set format to #.##</span>
+<span class="w">    </span><span class="n">cout</span><span class="p">.</span><span class="n">precision</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  Total Worth: $&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">total_val</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// restore original format</span>
+<span class="w">    </span><span class="n">cout</span><span class="p">.</span><span class="n">setf</span><span class="p">(</span><span class="n">orig</span><span class="p">,</span><span class="w"> </span><span class="n">ios_base</span><span class="o">::</span><span class="n">floatfield</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="p">.</span><span class="n">precision</span><span class="p">(</span><span class="n">prec</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><a class="headerlink" href="#stock1cpp-stock-class-implementation-with-constructors-destructor-added-include-iostream-include-stock10h-constructors-verbose-versions-stockstock-default-constructor-stdcout-default-constructor-calledn-company-no-name-shares-0-share_val-00-total_val-00-stockstockconst-stdstring-co-long-n-double-pr-stdcout-constructor-using-co-calledn-company-co-if-n-0-stdcout-number-of-shares-cant-be-negative-company-shares-set-to-0n-shares-0-else-shares-n-share_val-pr-set_tot-class-destructor-stockstock-verbose-class-destructor-stdcout-bye-company-n-other-methods-void-stockbuylong-num-double-price-if-num-0-stdcout-number-of-shares-purchased-cant-be-negative-transaction-is-abortedn-else-shares-num-share_val-price-set_tot-void-stockselllong-num-double-price-using-stdcout-if-num-0-cout-number-of-shares-sold-cant-be-negative-transaction-is-abortedn-else-if-num-shares-cout-you-cant-sell-more-than-you-have-transaction-is-abortedn-else-shares-num-share_val-price-set_tot-void-stockupdatedouble-price-share_val-price-set_tot-void-stockshow-using-stdcout-using-stdios_base-set-format-to-ios_basefmtflags-orig-coutsetfios_basefixed-ios_basefloatfield-stdstreamsize-prec-coutprecision3-cout-company-company-shares-shares-n-cout-share-price-share_val-set-format-to-coutprecision2-cout-total-worth-total_val-n-restore-original-format-coutsetforig-ios_basefloatfield-coutprecisionprec" title="Permanent link">&para;</a></h2>
+<h2 id="usestok1cpp-using-the-stock-class-compile-with-stock10cpp-include-iostream-include-stock10h-int-main-using-stdcout-cout-using-constructors-to-create-new-objectsn-stock-stock1nanosmart-12-200-syntax-1-stock1show-stock-stock2-stock-boffo-objects-2-20-syntax-2-stock2show-cout-assigning-stock1-to-stock2n-stock2-stock1-cout-listing-stock1-and-stock2n-stock1show-stock2show-cout-using-a-constructor-to-reset-an-objectn-stock1-stocknifty-foods-10-500-temp-object-cout-revised-stock1n-stock1show-cout-donen-stdcinget-return-0"><div class="highlight"><pre><span></span><code><span class="c1">// usestok1.cpp -- using the Stock class</span>
+<span class="c1">// compile with stock10.cpp</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stock10.h&quot;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Using constructors to create new objects</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Stock</span><span class="w"> </span><span class="n">stock1</span><span class="p">(</span><span class="s">&quot;NanoSmart&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mf">20.0</span><span class="p">);</span><span class="w">            </span><span class="c1">// syntax 1</span>
+<span class="w">    </span><span class="n">stock1</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Stock</span><span class="w"> </span><span class="n">stock2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stock</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Boffo Objects&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span><span class="w"> </span><span class="c1">// syntax 2</span>
+<span class="w">    </span><span class="n">stock2</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Assigning stock1 to stock2:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">stock2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stock1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Listing stock1 and stock2:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">stock1</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="w">    </span><span class="n">stock2</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Using a constructor to reset an object</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">stock1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stock</span><span class="p">(</span><span class="s">&quot;Nifty Foods&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">50.0</span><span class="p">);</span><span class="w">    </span><span class="c1">// temp object</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Revised stock1:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">stock1</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Done</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// std::cin.get();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><a class="headerlink" href="#usestok1cpp-using-the-stock-class-compile-with-stock10cpp-include-iostream-include-stock10h-int-main-using-stdcout-cout-using-constructors-to-create-new-objectsn-stock-stock1nanosmart-12-200-syntax-1-stock1show-stock-stock2-stock-boffo-objects-2-20-syntax-2-stock2show-cout-assigning-stock1-to-stock2n-stock2-stock1-cout-listing-stock1-and-stock2n-stock1show-stock2show-cout-using-a-constructor-to-reset-an-objectn-stock1-stocknifty-foods-10-500-temp-object-cout-revised-stock1n-stock1show-cout-donen-stdcinget-return-0" title="Permanent link">&para;</a></h2>
+<p>说明：
+1）可以将一个对象赋给另一个对象：
+<div class="highlight"><pre><span></span><code><span class="n">stock2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stock1</span><span class="p">;</span>
+</code></pre></div></p>
+<blockquote>
+<p><strong>默认情况下，给类对象赋值时，将把一个对象复制给另一个</strong></p>
+<blockquote>
+<p>在上面这个例子当中，stock2的原内容将被覆盖！</p>
+</blockquote>
+</blockquote>
+<p>2）构造函数不仅可用于新对象，也可以用于旧对象的新值赋予
+<div class="highlight"><pre><span></span><code><span class="n">stock1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stock</span><span class="p">(</span><span class="s">&quot;hhh&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">50.0</span><span class="p">);</span>
+
+<span class="n">stock1已存在</span><span class="err">，</span><span class="n">这句语句不是对stock1初始化</span><span class="err">，</span><span class="n">而是将新值赋给它</span>
+<span class="n">原理</span><span class="err">：</span><span class="n">让构造函数创建一个新的</span><span class="err">、</span><span class="n">临时的对象</span><span class="err">，</span><span class="n">然后将内容</span><span class="w"> </span><span class="n">复制</span><span class="w"> </span><span class="n">给stock1来实现</span><span class="err">，</span><span class="n">随后程序调用析构函数</span><span class="err">，</span><span class="n">以删除该临时对象</span>
+</code></pre></div></p>
+<p>3）由函数栈原理：局部变量消失的顺序是：LIFO（自动变量被放在栈中，最后创建的对象最先被删除）</p>
+<p>4）==区分初始化 与 赋值：==
+<div class="highlight"><pre><span></span><code><span class="n">Stock</span><span class="w"> </span><span class="n">hbx2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stock</span><span class="p">(</span><span class="s">&quot;jjj&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span><span class="w">  </span><span class="c1">// 初始化，它创建有指定值的对象  有可能会产生临时变量</span>
+
+<span class="n">hbx1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stock</span><span class="p">(</span><span class="s">&quot;jjj&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">5.0</span><span class="p">);</span><span class="w">          </span><span class="c1">// 赋值，在赋值语句中使用构造函数，必然会产生一个临时对象</span>
+</code></pre></div></p>
+<p>5）对类对象使用 初始化列表
+举例说明即可
+<div class="highlight"><pre><span></span><code><span class="n">对于构造函数</span><span class="err">：</span>
+<span class="n">Stock</span><span class="o">::</span><span class="n">Stock</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">co</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
+
+<span class="n">初始化</span><span class="err">：</span>
+<span class="n">Stock</span><span class="w"> </span><span class="n">hop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;cbhgkjajdgbs&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">};</span><span class="w">   </span><span class="o">=&gt;</span><span class="w">   </span><span class="n">hop</span><span class="p">(</span><span class="s">&quot;cbhgkjajdgbs&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span>
+<span class="n">Stock</span><span class="w"> </span><span class="n">jum</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;dshakuhas&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span><span class="w">              </span><span class="o">=&gt;</span><span class="w">   </span><span class="n">jum</span><span class="p">(</span><span class="s">&quot;dshakuhas&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
+<span class="n">Stock</span><span class="w"> </span><span class="n">lll</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;dshakuhas&quot;</span><span class="p">};</span><span class="w">                  </span><span class="o">=&gt;</span><span class="w">   </span><span class="n">jum</span><span class="p">(</span><span class="s">&quot;dshakuhas&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
+<span class="n">Stock</span><span class="w"> </span><span class="n">jjj</span><span class="p">{};</span><span class="w">                              </span><span class="o">=&gt;</span><span class="w">   </span><span class="n">将与默认构造函数匹配</span><span class="err">！</span>
+</code></pre></div></p>
+<p>6）const成员函数
+![[Pasted image 20230730120542.png]]
+![[Pasted image 20230730120553.png]]</p>
+<h3 id="5this">5）this指针<a class="headerlink" href="#5this" title="Permanent link">&para;</a></h3>
+<p>【1】问题引入：</p>
+<blockquote>
+<p>定义一个成员函数，它查看两个Stock对象，并返回股价较高的那个对象的引用
+假设将该方法命名为 topval() 则函数调用stock1.topval( ) 将访问stock1对象的数据
+如果希望该方法能对两者进行比较，则应该将第二个对象作为参数传递给它
+出于效率，按照引用传递参数！因此：topval( ) 方法将使用一个类型为 const Stock&amp; 的参数
+<div class="highlight"><pre><span></span><code><span class="n">写法</span><span class="err">：</span><span class="k">const</span><span class="w"> </span><span class="n">Stock</span><span class="o">&amp;</span><span class="w"> </span><span class="n">topval</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Stock</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="n">括号内的const</span><span class="err">：</span><span class="n">该函数不会修改被显式访问的对象</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="n">括号后的const</span><span class="err">：</span><span class="n">该函数不会修改被隐式访问的对象</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="n">返回值类型的const</span><span class="err">：</span><span class="n">由于该函数返回了2个const对象之一的引用</span><span class="err">，</span><span class="n">因此返回类型也应该是const引用</span>
+</code></pre></div>
+假设要对stock1与stock2进行比较，可以采用：
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">方法1</span><span class="p">)</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stock1</span><span class="p">.</span><span class="n">topval</span><span class="p">(</span><span class="n">stock2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 显式访问stock2，隐式访问stock1</span>
+<span class="p">(</span><span class="n">方法2</span><span class="p">)</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stock2</span><span class="p">.</span><span class="n">topval</span><span class="p">(</span><span class="n">stock1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 显式访问stock1，隐式访问stock2</span>
+</code></pre></div></p>
+</blockquote>
+<hr />
+<blockquote>
+<p>现在问题又来了，注意topval()的实现：
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">Stock</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">Stock::topval</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Stock</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">total_val</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">total_val</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">?????</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">total_val是</span><span class="w"> </span><span class="n">作为参数的传递对象</span><span class="w"> </span><span class="n">的总值</span><span class="err">；</span><span class="n">total_val是</span><span class="w"> </span><span class="n">用来调用该方法的对象</span><span class="w"> </span><span class="n">的总值</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="n">问题在于如何称呼</span><span class="w"> </span><span class="o">?????</span>
+</code></pre></div></p>
+</blockquote>
+<p>【2】解决方法 及 知识引入：</p>
+<blockquote>
+<p>this指针：指向用来调用成员函数的对象
+所有的类方法都将this指针设置为 调用它的对象 的地址</p>
+</blockquote>
+<p>eg：
+这样的话，stock1.topval ( stock2 ); 中，将this设置为stock1对象的地址，使得这个指针可用于 topval() 方法
+函数中的 total_val 也只是 this-&gt;total_val 的简写</p>
+<blockquote>
+<p>每个成员函数（包括构造函数与析构函数）都有一个this指针，指向调用对象
+（1）要引用整个调用对象：使用表达式 <strong><em>*this</em></strong>
+（2）函数后面的const将this限定成const，这样的话就不能使用this来修改对象的值
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">Stock</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">Stock::topval</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Stock</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">total_val</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">total_val</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="o">*</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</blockquote>
+<h3 id="6_1">6）对象数组<a class="headerlink" href="#6_1" title="Permanent link">&para;</a></h3>
+<p>方案：
+（1）使用默认构造函数创建数组元素
+（2）花括号内的构造函数将创建临时对象【数组对象的构造函数将包括对每个元素单独调用的构造函数】
+（3）将临时对象中的内容复制到相应的元素中
+<strong>因此想要创建 类对象数组 ，则这个类必须要有默认构造函数</strong>
+<div class="highlight"><pre><span></span><code><span class="n">Stock</span><span class="w"> </span><span class="n">hbx</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="o">-</span>
+<span class="o">-------------------------------------------------</span>
+<span class="n">hbx</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">update</span><span class="p">();</span>
+<span class="n">hbx</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="n">show</span><span class="p">();</span>
+<span class="k">const</span><span class="w"> </span><span class="n">Stock</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hbx</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">topval</span><span class="p">(</span><span class="w"> </span><span class="n">hbx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="p">);</span>
+<span class="o">-------------------------------------------------</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">STKS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="n">Stock</span><span class="w"> </span><span class="n">stocks</span><span class="p">[</span><span class="n">STKS</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Stock</span><span class="p">(</span><span class="s">&quot;jhdsjds&quot;</span><span class="p">,</span><span class="mf">12.5</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Stock</span><span class="p">(</span><span class="s">&quot;asdnlj&quot;</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mf">2.0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Stock</span><span class="p">(</span><span class="s">&quot;adafs&quot;</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mf">1.25</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Stock</span><span class="p">(</span><span class="s">&quot;jhfgjfncg&quot;</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mf">6.5</span><span class="p">)</span>
+<span class="p">};</span>
+</code></pre></div></p>
+<h3 id="7">7）类作用域<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>【1】在类中定义的名称（类数据成员名 and 类成员函数名）的作用域为整个类，它们只在该类中是已知的，在类外是不可知的</p>
+<p>【2】类作用域意味着不能从外部直接访问类的成员。要想调用公有成员函数，必须通过对象
+<div class="highlight"><pre><span></span><code><span class="n">Stock</span><span class="w"> </span><span class="n">sleeper</span><span class="p">(</span><span class="s">&quot;assad&quot;</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mf">0.25</span><span class="p">);</span><span class="w">  </span><span class="c1">// create object</span>
+<span class="n">sleeper</span><span class="p">.</span><span class="n">show</span><span class="p">();</span><span class="w">  </span><span class="c1">// use object to invoke a member_function</span>
+<span class="n">show</span><span class="p">();</span><span class="w">  </span><span class="c1">// invalid !  ---cannot call method directly</span>
+</code></pre></div></p>
+<p>【3】定义成员函数时，必须使用类作用域解析运算符
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Stock::update</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>【4】在类声明or成员函数定义中，可以使用未修饰的成员名称 [ 因为名称的作用域在类内，这几个一家亲 ] 
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">IK</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fuss</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">IK</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">fuss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">;}</span><span class="w">  </span><span class="c1">//类内直接定义成员函数</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">ViewIK</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w">       </span><span class="c1">//类外定义成员函数【在类内只声明！】</span>
+<span class="p">};</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">IK</span><span class="o">::</span><span class="n">ViewIK</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w">        </span><span class="c1">//类外定义成员函数【要加类作用域解析符】</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fuss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">......</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">......</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>【5】如何在类中创建一个由所有对象共享的常量？
+（1）问题引入：
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Bakery</span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">costs</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<span class="p">......</span>
+<span class="p">}</span>
+</code></pre></div>
+这样不行！因为声明类只是描述了对象的形式，并没有创建对象。因此在创建对象之前，将没有用于存储值的空间！</p>
+<p>（2）问题解决：
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Bakery</span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">costs</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<span class="p">......</span>
+<span class="p">}</span>
+
+<span class="n">这将创建一个名为</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="n">的变量</span><span class="err">，</span><span class="n">该变量将与其他静态变量存储在一起</span><span class="err">，</span><span class="n">而不是存储在对象中</span>
+<span class="n">因此这个</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="n">常量</span><span class="w"> </span><span class="n">将被所有Bakery对象共享</span>
+</code></pre></div></p>
+<h3 id="8adt">8）抽象数据类型（ADT）<a class="headerlink" href="#8adt" title="Permanent link">&para;</a></h3>
+<p>以stack作例子：
+<div class="highlight"><pre><span></span><code><span class="c1">// stack.h -- class definition for the stack ADT</span>
+<span class="cp">#ifndef STACK_H_</span>
+<span class="cp">#define STACK_H_</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">Item</span><span class="p">;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Stack</span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="n">MAX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">};</span><span class="w">    </span><span class="c1">// constant specific to class</span>
+<span class="w">    </span><span class="n">Item</span><span class="w"> </span><span class="n">items</span><span class="p">[</span><span class="n">MAX</span><span class="p">];</span><span class="w">    </span><span class="c1">// holds stack items</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">;</span><span class="w">            </span><span class="c1">// index for top stack item</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">Stack</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isempty</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isfull</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// push() returns false if stack already is full, true otherwise</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">push</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span><span class="p">);</span><span class="w">   </span><span class="c1">// add item to stack</span>
+<span class="w">    </span><span class="c1">// pop() returns false if stack already is empty, true otherwise</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">pop</span><span class="p">(</span><span class="n">Item</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span><span class="p">);</span><span class="w">          </span><span class="c1">// pop top into item</span>
+<span class="p">};</span>
+<span class="cp">#endif</span>
+</code></pre></div></p>
+<hr />
+<h2 id="stackcpp-stack-member-functions-include-stackh-stackstack-create-an-empty-stack-top-0-bool-stackisempty-const-return-top-0-bool-stackisfull-const-return-top-max-bool-stackpushconst-item-item-if-top-max-itemstop-item-return-true-else-return-false-bool-stackpopitem-item-if-top-0-item-items-top-return-true-else-return-false"><div class="highlight"><pre><span></span><code><span class="c1">// stack.cpp -- Stack member functions</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stack.h&quot;</span>
+<span class="n">Stack</span><span class="o">::</span><span class="n">Stack</span><span class="p">()</span><span class="w">    </span><span class="c1">// create an empty stack</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">Stack</span><span class="o">::</span><span class="n">isempty</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">Stack</span><span class="o">::</span><span class="n">isfull</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MAX</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">Stack</span><span class="o">::</span><span class="n">push</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">top</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MAX</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">items</span><span class="p">[</span><span class="n">top</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">Stack</span><span class="o">::</span><span class="n">pop</span><span class="p">(</span><span class="n">Item</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">top</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span><span class="p">[</span><span class="o">--</span><span class="n">top</span><span class="p">];</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><a class="headerlink" href="#stackcpp-stack-member-functions-include-stackh-stackstack-create-an-empty-stack-top-0-bool-stackisempty-const-return-top-0-bool-stackisfull-const-return-top-max-bool-stackpushconst-item-item-if-top-max-itemstop-item-return-true-else-return-false-bool-stackpopitem-item-if-top-0-item-items-top-return-true-else-return-false" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1">// stacker.cpp -- testing the Stack class</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cctype&gt;</span><span class="c1">  // or ctype.h</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stack.h&quot;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Stack</span><span class="w"> </span><span class="n">st</span><span class="p">;</span><span class="w"> </span><span class="c1">// create an empty stack</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">po</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Please enter A to add a purchase order,</span><span class="se">\n</span><span class="s">&quot;</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;P to process a PO, or Q to quit.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">toupper</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;Q&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">)</span><span class="w">  </span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isalpha</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\a&#39;</span><span class="p">;</span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="k">switch</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">             </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">:</span>
+<span class="w">             </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter a PO number to add: &quot;</span><span class="p">;</span>
+<span class="w">                       </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">po</span><span class="p">;</span>
+<span class="w">                       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">isfull</span><span class="p">())</span>
+<span class="w">                           </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;stack already full</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">                       </span><span class="k">else</span>
+<span class="w">                           </span><span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">po</span><span class="p">);</span>
+<span class="w">                       </span><span class="k">break</span><span class="p">;</span>
+<span class="w">             </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;P&#39;</span><span class="p">:</span>
+<span class="w">             </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;p&#39;</span><span class="p">:</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">isempty</span><span class="p">())</span>
+<span class="w">                           </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;stack already empty</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">                       </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                           </span><span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="n">po</span><span class="p">);</span>
+<span class="w">                           </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;PO #&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">po</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; popped</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">                       </span><span class="p">}</span>
+<span class="w">                       </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Please enter A to add a purchase order,</span><span class="se">\n</span><span class="s">&quot;</span>
+<span class="w">             </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;P to process a PO, or Q to quit.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Bye</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      胡博瑄
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

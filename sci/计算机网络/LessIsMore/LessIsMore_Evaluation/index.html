@@ -1,0 +1,5269 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="胡博瑄的学习网站">
+      
+      
+        <meta name="author" content="胡博瑄">
+      
+      
+        <link rel="canonical" href="https://github.com/root-hbx/sci/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/LessIsMore/LessIsMore_Evaluation/">
+      
+      
+        <link rel="prev" href="../LessIsMore_DSH_Design/">
+      
+      
+        <link rel="next" href="../LessIsMore_RelatedWork/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Evaluation - carrot_world</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../mkdocs/css/no-footer.css">
+    
+      <link rel="stylesheet" href="../../../../mkdocs/css/unordered-list-symbols.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#evaluation" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="carrot_world" class="md-header__button md-logo" aria-label="carrot_world" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            carrot_world
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Evaluation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/root-hbx" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GithubRepo_Of_hbx
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../LECTURE/" class="md-tabs__link">
+          
+  
+    
+  
+  基础运维知识
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../BLOG/" class="md-tabs__link">
+          
+  
+    
+  
+  常用开发简介
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../curriculum_study/" class="md-tabs__link">
+          
+  
+    
+  
+  计算机课程整理
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+    
+  
+  优秀论文整理
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Sci_doc/" class="md-tabs__link">
+          
+  
+    
+  
+  科研软件指南
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ME/" class="md-tabs__link">
+          
+  
+    
+  
+  hbx是谁
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../HuSay/20231123/" class="md-tabs__link">
+          
+  
+    
+  
+  《胡说》
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="carrot_world" class="md-nav__button md-logo" aria-label="carrot_world" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    carrot_world
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/root-hbx" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GithubRepo_Of_hbx
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../LECTURE/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    基础运维知识
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            基础运维知识
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Linux/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux讲座
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Linux/commands-concise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    命令行入门精简版
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Markdown
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Markdown
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Markdown/markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown讲座
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Markdown/vscode-extension/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VSCode及插件安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Git/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Git/git-demos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git例子
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Git/git-teamwork/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git合作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/Git/windows-install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows安装Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    在macOS上用VSCode写C++代码
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            在macOS上用VSCode写C++代码
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/0_about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0 介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/1_%E5%89%8D%E8%A8%80%E5%92%8C%E8%AF%BE%E7%A8%8B%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 前言和课程说明
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/2_%E8%AE%A4%E8%AF%86macOS%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 认识macOS的文件系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/3_%E8%AE%A4%E8%AF%86%E7%A8%8B%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 认识程序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/4_%E8%AE%A4%E8%AF%86%E7%BB%88%E7%AB%AF%E5%92%8Cshell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 认识终端和shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/5_%E5%BC%80%E5%90%AFVSCode%E7%9A%84%E5%A4%A7%E9%97%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 开启VSCode的大门
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/6_VSCode%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C%E8%87%AA%E5%8A%A8%E5%8C%96/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 VSCode代码运行自动化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/7_%E7%94%A8VSCode%E8%B0%83%E8%AF%95Cpp%E4%BB%A3%E7%A0%81/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 用VSCode调试Cpp代码
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/8_%E8%AF%BE%E7%A8%8B%E5%9B%9E%E9%A1%BE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 课程回顾
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/9_others/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    其他
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/10_%E6%9E%81%E9%80%9F%E7%89%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    极速版
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/vscode-cpp/11_%E8%A1%A5%E5%85%85/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    补充
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ns-3的配置
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            ns-3的配置
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/ns-3/ns3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    保姆级配置教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    terminal_zsh
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            terminal_zsh
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LECTURE/terminal_zsh/oh_my_zsh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mac的终端优化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../BLOG/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    常用开发简介
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            常用开发简介
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/others/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    其他博客链接
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Markdown
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Markdown
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/Markdown/grammars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown 语法学习 精简版
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/Markdown/mkdocs-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish a Website with Material for MkDocs and GitHub Pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/Markdown/mdbook-site/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish a Website with mdBook and GitHub Pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/Markdown/github-pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Pages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/Linux/vim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vim 学习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/Linux/tmux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tmux 使用指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/Linux/unix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unix and Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/Linux/kernel-compile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux 内核编译尝试
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/Linux/pi-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    树莓派入门指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/OS/fork-exec-spawn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fork/exec/spawn 辨析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../BLOG/OS/fork-example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fork 例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../curriculum_study/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    计算机课程整理
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            计算机课程整理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C++PrimerPlus
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            C++PrimerPlus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter2%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0c%2B%2B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter2开始学习c++
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter3%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter3处理数据
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter4%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter4复合类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter5%E5%BE%AA%E7%8E%AF%E4%B8%8E%E5%85%B3%E7%B3%BB%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter5循环与关系表达式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter6%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter6分支语句与逻辑运算符
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter7%E5%87%BD%E6%95%B0-c%2B%2B%E7%9A%84%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter7函数 c++的编程模块
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter8%E5%87%BD%E6%95%B0%E6%8E%A2%E5%B9%BD%28%E4%B8%8A%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter8函数探幽(上)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter8%E5%87%BD%E6%95%B0%E6%8E%A2%E5%B9%BD%28%E4%B8%8B%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter8函数探幽(下)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter9%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E5%92%8C%E5%90%8D%E7%A7%B0%E7%A9%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter9内存模型和名称空间
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter10%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter10对象和类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter11%E4%BD%BF%E7%94%A8%E7%B1%BB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter11使用类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter12%E7%B1%BB%E5%92%8C%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter12类和动态内存分配
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter13%E7%B1%BB%E7%BB%A7%E6%89%BF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter13类继承
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter14c%2B%2B%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E9%87%8D%E7%94%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter14c++中的代码重用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter15%E5%8F%8B%E5%85%83%E3%80%81%E5%BC%82%E5%B8%B8%E5%92%8C%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter15友元、异常和其他
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter16string%E7%B1%BB%E5%92%8C%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter16string类和标准模板库
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter17%E8%BE%93%E5%85%A5%E3%80%81%E8%BE%93%E5%87%BA%E5%92%8C%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter17输入、输出和文件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/C%2B%2BPrimerPlus/chapter18%E6%8E%A2%E8%AE%A8c%2B%2B%E6%96%B0%E6%A0%87%E5%87%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter18探讨c++新标准
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CSAPP_(CMU)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            CSAPP_(CMU)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/CSAPP_CMU/%E5%B8%B8%E8%A7%81%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常见汇编指令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/CSAPP_CMU/chapter2_%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter2 信息的表示和处理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/CSAPP_CMU/chapter3_%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter3 程序的机器级表示
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/CSAPP_CMU/chapter5_%E4%BC%98%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter5 优化程序性能
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/CSAPP_CMU/chapter6_%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter6 存储器的层次结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/CSAPP_CMU/chapter7_%E9%93%BE%E6%8E%A5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter7 链接
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TD_net
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            TD_net
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/TD_net/ch1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter1 计算机网络概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/TD_net/ch2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter2 应用层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/TD_net/ch3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter3 传输层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/TD_net/ch4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter4 网络层：数据平面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/TD_net/ch5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter5 网络层：控制平面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/TD_net/ch6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter6 链路层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Info-theory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Info-theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture3 - AEP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture4 - Entropy Rate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture5 - Data Compression Part1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture6 - Data Compression Part2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture7 - Data Compression Part3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture8 - Channel Capacity Part1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture9 - Channel Capacity Part2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture10 - Channel Capacity Part3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture11 - Differential Entropy Part1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture12 - Differential Entropy Part2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture13 - Gaussian Channel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Info-theory/lec14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture14 - 笔者对于部分基础概念的整理复习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algorithm_design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm_design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Algorithm_XJTU/qimo_review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    期末备考指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Algorithm_XJTU/qimo_big/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常考算法模板
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../curriculum_study/Algorithm_XJTU/qimo_exe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    考前小练习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    优秀论文整理
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            优秀论文整理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机网络
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_1" id="__nav_4_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RDMA_over_Commodity_Ethernet_at_Scale
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            RDMA_over_Commodity_Ethernet_at_Scale
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale%28Abstruct%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDMA over Commodity Ethernet at Scale(Abstruct)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale%28Background%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDMA over Commodity Ethernet at Scale(Background)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale%28Introduction%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDMA over Commodity Ethernet at Scale(Introduction)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/RDMA_over_Commodity_Ethernet_at_Scale%28Conclusion%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RDMA over Commodity Ethernet at Scale(Conclusion)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/3_DSCP-BASED%20PFC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 DSCP BASED PFC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/4.1_RDMA_transport_livelock%28%E4%BC%A0%E8%BE%93%E6%B4%BB%E9%94%81%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 RDMA transport livelock(传输活锁)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/4.2_PFC%20Deadlock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 PFC Deadlock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/4.3_NIC_PFC_pause_frame_storm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 NIC PFC pause frame storm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/4.4_The_Slow-receiver_symptom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 The Slow receiver symptom
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/5_RDMA_In_Production/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 RDMA In Production
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/6_EXPERIENCES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 EXPERIENCES
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/7_RELATED%20WORK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 RELATED WORK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/8_CONCLUSION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 CONCLUSION
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/%E2%80%9C%E8%AF%BB%E5%90%8E%E6%84%9F%E2%80%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    “读后感”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RDMA_over_Commodity_Ethernet_at_Scale/issue_thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Issue thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_2" id="__nav_4_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ICDCS23_Less_is_More_Dynamic_and_Shared_Headroom_Allocation_in_PFC-enabled_Datacenter_Networks
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            ICDCS23_Less_is_More_Dynamic_and_Shared_Headroom_Allocation_in_PFC-enabled_Datacenter_Networks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LessIsMore_Abstruct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Abstruct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LessIsMore_Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LessIsMore_Background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Background
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LessIsMore_Motivation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motivation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LessIsMore_DSH_Design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DSH_Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Evaluation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Evaluation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#psfct" class="md-nav__link">
+    <span class="md-ellipsis">
+      ps：FCT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#psshort-fan-in-flows-one-to-one-background-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：“short fan-in flows" 和 "one-to-one background flows"
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-microbenchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Microbenchmarks（微基准测试）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. Microbenchmarks（微基准测试）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    <span class="md-ellipsis">
+      ps：微基准测试
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psdwrr_algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ps：DWRR_Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psflowpoisson" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：flow遵从poisson分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：为什么网络领域中，泊松过程通常用于模拟流量的到达模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pscollateral-damage-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：Collateral damage mitigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psbdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：BDP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ps_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：拥塞控制算法被触发的条件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-benchmark-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Benchmark Traffic（基准流量）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Benchmark Traffic（基准流量）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topology.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switch.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transport.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      附注：
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附注：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据挖掘工作负载
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存工作负载
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hadoop工作负载
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      叶脊拓扑结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fat-treek16" class="md-nav__link">
+    <span class="md-ellipsis">
+      脂肪树（fat-tree）拓扑结构（k=16）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="脂肪树（fat-tree）拓扑结构（k=16）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要特征：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体过程：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LessIsMore_RelatedWork/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Related Work
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LessIsMore_Conclusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B4%E7%90%86%E4%B8%8E%E6%80%9D%E8%80%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    整理与思考
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../Sci_doc/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    科研软件指南
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            科研软件指南
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ns-3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            ns-3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Sci_doc/ns-3/ch0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0 ns-3及其基础配置
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Sci_doc/ns-3/ch1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 入门程序解析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Sci_doc/ns-3/ch2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 显示结果的优化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Sci_doc/ns-3/ch3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 模拟建立拓扑结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Sci_doc/ns-3/ch4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 ns-3_tracing的全部实现机理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Sci_doc/ns-3/ch5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 ns-3_Data-Collection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../ME/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    hbx是谁
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            hbx是谁
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ME/description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    个人特点
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ME/ability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    个人能力
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ME/experience/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    个人经历
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ME/php/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    有意义的照片
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    《胡说》
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            《胡说》
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HuSay/20231123/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ”慢思考“之我见
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#psfct" class="md-nav__link">
+    <span class="md-ellipsis">
+      ps：FCT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#psshort-fan-in-flows-one-to-one-background-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：“short fan-in flows" 和 "one-to-one background flows"
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-microbenchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Microbenchmarks（微基准测试）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. Microbenchmarks（微基准测试）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    <span class="md-ellipsis">
+      ps：微基准测试
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psdwrr_algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ps：DWRR_Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psflowpoisson" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：flow遵从poisson分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：为什么网络领域中，泊松过程通常用于模拟流量的到达模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pscollateral-damage-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：Collateral damage mitigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psbdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：BDP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ps_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      PS：拥塞控制算法被触发的条件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-benchmark-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Benchmark Traffic（基准流量）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. Benchmark Traffic（基准流量）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topology.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switch.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transport.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      附注：
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附注：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据挖掘工作负载
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      缓存工作负载
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hadoop工作负载
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      叶脊拓扑结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fat-treek16" class="md-nav__link">
+    <span class="md-ellipsis">
+      脂肪树（fat-tree）拓扑结构（k=16）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="脂肪树（fat-tree）拓扑结构（k=16）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要特征：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      具体过程：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/root-hbx/edit/main/docs/sci/计算机网络/LessIsMore/LessIsMore_Evaluation.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h1>
+<p>In this section, we evaluate DSH’s performance with extensive packet-level simulations on the ns-3 platform [44]. We summarize the results below.
+在这一部分中，我们通过在ns-3平台上进行大量的分组级模拟来评估DSH的性能[44]。我们将结果总结如下。</p>
+<ul>
+<li>DSH can absorb 4× more bursty traffic without triggering PFC messages. </li>
+<li>DSH can effectively mitigate the performance impair-ments (i.e., collateral damage and deadlock) brought by PFC messages. </li>
+<li>
+<p>DSH can reduce the ==FCT== by up to 57.7% for ==short fan-in flows== and up to 31.1% for ==one-to-one background flows== in large-scale DCN topology.</p>
+</li>
+<li>
+<p>DSH能够吸收4倍以上的突发流量，而不触发PFC消息。</p>
+</li>
+<li>DSH能够有效减轻由PFC消息引起的性能损害（即，附带损害和死锁）。</li>
+<li>DSH在大规模数据中心网络拓扑中，对 <em>短fan-in流</em> 和 <em>一对一后台流</em> 的<strong>FCT</strong>能够分别减少最多57.7%和31.1%。</li>
+</ul>
+<h6 id="psfct">ps：FCT<a class="headerlink" href="#psfct" title="Permanent link">&para;</a></h6>
+<blockquote>
+<p>在计算机网络中，FCT（Flow Completion Time）是指<strong>完成一个数据流传输所需的时间</strong>。它是衡量网络性能的重要指标，涉及到 <em>从发送端发送数据</em> 到 <em>接收端完成接收</em> 的整个时间过程。FCT包括了多个阶段，如数据传输延迟、传输队列等待时间以及其他可能的延迟因素。</p>
+</blockquote>
+<h6 id="psshort-fan-in-flows-one-to-one-background-flows">PS：“short fan-in flows" 和 "one-to-one background flows"<a class="headerlink" href="#psshort-fan-in-flows-one-to-one-background-flows" title="Permanent link">&para;</a></h6>
+<blockquote>
+<p>在上下文中，"short fan-in flows" 和 "one-to-one background flows" 是关于网络流量模型的描述。
+1. <strong>Short Fan-in Flows:</strong>
+- "Short fan-in flows" 意味着这是一种流量模型，其中涉及到==短暂且汇聚（fan-in）的数据流==。
+- "Short" 表示这些数据流的持续时间相对较短。
+- "Fan-in" 表示这些流量源自不同的入口（ingress）端口，但最终汇聚到同一个出口（egress）端口。
+2. <strong>One-to-One Background Flows:</strong>
+- "One-to-one background flows" 意味着这是一种流量模型，其中每个后台流都与另一个特定的流相对应。
+- "One-to-one" 表示每个后台流与一个特定的目标流相对应，可能表示每个后台流有一个独立的通信关系。
+- =="Background flows" 通常指的是那些不太紧急或不太重要的流量==，可能是系统中的一些常规通信。</p>
+<p>在你提到的上下文中，作者可能使用这些术语来描述他们在评估DSH性能时所使用的流量模型，以便更清晰地理解系统在处理不同类型流量时的行为和性能表现。</p>
+</blockquote>
+<p>FCT的计算通常包括以下主要组成部分：
+1. <strong>发送延迟（Send Delay）：</strong> 从数据流开始发送到第一个比特离开发送端所经历的时间。
+2. <strong>传输延迟（Transmission Delay）：</strong> 数据在传输介质中传播所需的时间，通常与带宽和距离有关。
+3. <strong>排队延迟（Queueing Delay）：</strong> 数据在网络中等待传输的时间，与网络拥塞程度和队列长度有关。
+4. <strong>处理延迟（Processing Delay）：</strong> 数据在路由器或交换机中进行处理所需的时间，包括路由计算、查找转发表等操作。
+5. <strong>接收延迟（Receive Delay）：</strong> 接收端从接收到数据的第一个比特到整个数据流被接收完成所需的时间。</p>
+<p>综合考虑上述延迟，FCT的计算公式可以表示为：
+<span class="arithmatex">\(FCT = \text{发送延迟} + \text{传输延迟} + \text{排队延迟} + \text{处理延迟} + \text{接收延迟}\)</span>
+优化FCT是网络设计和管理中的重要目标，特别是在数据中心网络等对性能要求较高的场景中。减少FCT有助于提高网络的响应性、降低传输延迟，从而改善用户体验和应用性能。</p>
+<h3 id="a-microbenchmarks">A. Microbenchmarks（微基准测试）<a class="headerlink" href="#a-microbenchmarks" title="Permanent link">&para;</a></h3>
+<h6 id="ps">ps：微基准测试<a class="headerlink" href="#ps" title="Permanent link">&para;</a></h6>
+<p>微基准测试指的是针对<em>系统或组件</em> <strong>特定且孤立</strong>方面进行评估的<strong>小规模性能测试</strong>。这些测试旨在测量单个功能、模块或操作的性能，以识别潜在瓶颈、评估效率，并了解系统在特定条件下的行为。微基准测试对于精细粒度的性能分析和优化非常有价值。</p>
+<p>微基准测试的关键特点包括：
+1. <strong>隔离性：</strong> 微基准测试隔离了特定的功能或组件，允许有针对性地评估，而不受其他系统元素的干扰。
+2. <strong>精确性：</strong> 这些基准测试旨在精确测量特定功能或操作的性能，提供对其效率和执行特性的详细了解。
+3. <strong>可重现性：</strong> 微基准测试通常被设计为易于重现，确保重复测试能够产生一致的结果。
+4. <strong>关注度量标准：</strong> 它们通常关注定量指标，如执行时间、吞吐量、延迟或资源利用率，以量化目标方面的性能。
+5. <strong>简单性：</strong> 微基准测试通常相对简单，因为它们旨在孤立评估特定功能。这种简单性有助于分析特定组件，而无需整个系统的复杂性。</p>
+<p>微基准测试广泛用于软件开发、系统优化和性能调整。它们在识别性能瓶颈、验证优化工作以及指导软件和硬件设计方面发挥着关键作用。此外，这些基准测试对比较不同算法实现或版本，以及评估变更对系统特定组件的影响都非常有价值。</p>
+<p>In this part, we evaluate DSH’s basic performance with care-fully constructed microbenchmarks. We emulate the Broadcom Tomahawk switching chip, which has 32 100Gbps ports and 16MB shared memory. Each port has 8 queues. One queue is reserved for ACK packets and PAUSE/RESUME messages, and has the highest priority. Other seven queues are scheduled by the DWRR algorithm with a quantum of 1600B. The link delay is 2μs and thus η = 56840B. The total headroom size for SIH is 56840B × 32 × 7=12MB. The private buffer size is 672KB (3KB for each DWRR-scheduled queue). For DT, α is set to 1/16 according to [3]. The Xqon/Xpon threshold is the same as the Xqoff /Xpoff threshold.</p>
+<p>在这一部分，我们通过精心构建的微基准测试评估了DSH的基本性能。
+我们模拟了Broadcom Tomahawk交换芯片，该芯片具有32个100Gbps端口和16MB共享内存。
+每个端口有8个队列。<strong>其中一个队列用于ACK数据包和PAUSE/RESUME消息，具有最高优先级。</strong> 
+其他七个队列由==DWRR算法==调度，每个队列的权重为1600B。
+链路延迟为2μs，因此η = 56840B。
+SIH的总储备空间大小为56840B × 32 × 7 = 12MB。
+私有缓冲区大小为672KB（每个DWRR调度队列为3KB）。
+对于DT，根据[3]，α设置为1/16。Xqon/Xpon阈值与Xqoff/Xpoff阈值相同。</p>
+<h6 id="psdwrr_algorithm">ps：DWRR_Algorithm<a class="headerlink" href="#psdwrr_algorithm" title="Permanent link">&para;</a></h6>
+<blockquote>
+<p>DWRR（Deficit Weighted Round Robin）算法是一种流量调度算法，常用于网络中的队列管理。它的设计目标是通过动态调整权重来实现公平性和灵活性，确保资源分配更符合流量的需求。以下是DWRR算法的基本原理：
+1. <strong>权重分配：</strong> 每个队列都被分配一个权重值，表示其在调度时获得服务的相对优先级。较高权重的队列在每轮调度中获得更多的服务机会。
+2. <strong>缺额计数：</strong> 每个队列都有一个缺额计数器，初始化为零。在每轮调度中，队列未使用的权重将被累积到缺额计数器中
+3. <strong>调度过程：</strong> 在每个调度周期中，DWRR按照队列的权重依次为每个队列分配服务机会。队列被允许发送的数据量由其缺额计数决定。每个队列在获得服务机会后，其缺额计数将被减去其权重值。
+4. <strong>动态调整：</strong> 如果某个队列未用完其服务机会，剩余的权重将被保留到下一轮调度。这使得DWRR能够动态适应流量的变化，更好地处理不同优先级和带宽需求的流。</p>
+<p>在文中提到的情境中，DWRR算法被用于调度Broadcom Tomahawk交换芯片上的七个队列，每个队列的权重为1600B。这样的设置允许对不同类型的数据包进行公平调度，确保高优先级队列能够更及时地获得服务。</p>
+<p>https://blog.csdn.net/lsl_zhulin/article/details/115643382</p>
+</blockquote>
+<p><strong>PFC avoidance：</strong> First, we evaluate the ability of DSH to avoid PFC messages. As shown in Fig. 11a, we start two background flows at the beginning, which are from ingress port 0 and ingress port 1, respectively, and head for egress port 31. At t =0.1s, we start 16 fan-in bursty flows, which are from ingress port 2-17 to egress port 30. Fig. 11b shows the total pause duration of all fan-in flows. DSH can avoid PAUSE messages when the burst size is no larger than 40% of buffer size, which is over 4× better than SIH.学术化翻译成中文</p>
+<p>PFC（Priority Flow Control）的规避。首先，我们评估DSH规避PFC消息的能力。如图11a所示，我们在开始时启动了两个后台流[background flows]，分别来自入口端口0和入口端口1，目的地是出口端口31。在t=0.1s时，我们启动了16个短时突发流[fan-in flows]，它们从入口端口2-17到达出口端口30。图11b显示了所有短时突发流的总暂停持续时间。当突发大小不超过缓冲区大小的40%时，DSH可以避免PAUSE消息，这比SIH好了4倍以上。</p>
+<p>![[Pasted image 20231126154314.png]]</p>
+<p><strong>Deadlock avoidance：</strong> One impairment brought by PFC mes-sages is deadlock [3], [6]–[8], [11], which is a serious problem as it can make a large part of network unusable. In this part, we evaluate the ability of DSH to avoid deadlock. We consider a topology shown in Fig. 12a, which is a leaf-spine topology with two link failures marked with dashed lines (i.e., S0-L3 and S1-L0). In the topology, there are two spine switches (S0 and S1) and four leaf switches (L0 − L3). Each leaf switch is connected to 16 hosts with 100Gbps downlinks, and connected to two spine switches with 400Gbps uplinks. The link delay is 2μs. We generate fan-in flows, which are from L0 to L3, from L3 to L0, from L1 to L2, and from L2 to L1, respectively. As a result, there is a cyclic buffer dependency marked as red lines: S0 → L1 → S1 → L2 → S0. The fan-in ratio (i.e., the number of flows) ranges from 1 to 15. The flow size is randomly chosen based on the Hadoop workload [28], and flow arrivals follow a Poisson process. The network load is 0.5 at the downlinks of each leaf switch. Each scheme is tested 100 times and each simulation lasts for 100ms. Fig. 12b shows the CDF of deadlock onset time. With SIH, deadlock occurs for all simulations either with DCQCN [1] or PowerTCP [37]. In comparison, DSH can avoid 96% deadlocks with DCQCN and all deadlocks with PowerTCP. This is because DSH can leave more “footroom” to absorb bursty traffic, avoiding PFC messages.</p>
+<p>死锁规避。PFC（Priority Flow Control）消息引入的一个问题是死锁[3]，[6]–[8]，[11]，这是一个严重的问题，因为它可能导致网络的大部分无法使用。在这一部分，我们评估DSH规避死锁的能力。</p>
+<p>我们考虑了图12a中显示的拓扑结构，这是一个具有<strong>两个虚线标记的链路故障的叶脊拓扑结构（即，S0-L3和S1-L0）</strong>。
+在拓扑结构中，有两个脊交换机（S0和S1）和四个叶交换机（L0 − L3）。
+每个叶交换机连接到16个具有100Gbps下行链路的主机，并通过400Gbps上行链路连接到两个脊交换机。
+链路延迟为2μs。我们生成汇聚流，分别从L0到L3，从L3到L0，从L1到L2，以及从L2到L1。因此，存在一个被标记为红线的循环缓冲区依赖关系：S0 → L1 → S1 → L2 → S0。 
+汇聚比率（即:流的数量）从1到15不等。流量大小==基于Hadoop工作负载[28]随机选择==，==流到达遵循泊松过程==。每个叶交换机下行链路的网络负载为0.5。每个方案测试100次，每次模拟持续100毫秒。</p>
+<p>图12b显示了死锁发生时间的累积分布函数。对于SIH，无论使用DCQCN[1]还是PowerTCP[37]，都会在所有模拟中发生死锁。相比之下，DSH在使用DCQCN时可以避免96%的死锁，在使用PowerTCP时可以避免所有死锁。这是因为DSH可以留出更多的“余地”来吸收突发流量，从而避免PFC消息。</p>
+<p>![[Pasted image 20231126160536.png]]</p>
+<h6 id="psflowpoisson">PS：flow遵从poisson分布<a class="headerlink" href="#psflowpoisson" title="Permanent link">&para;</a></h6>
+<blockquote>
+<p>"流到达遵循泊松过程"指的是流量到达的模式，其中流的发生符合泊松过程。泊松过程是一种随机过程，描述了一系列独立事件在时间上的发生，且其发生的间隔时间遵循指数分布。</p>
+<p>在网络领域中，泊松过程通常用于模拟流量的到达模式。具体而言，如果流到达遵循泊松过程，这意味着流量的到达时间是随机的且事件之间的间隔时间是指数分布的。以下是关于泊松过程的一些关键概念：
+【1】<strong>独立性：</strong> 在泊松过程中，事件的发生是相互独立的，一个事件的发生不会影响其他事件的发生。
+【2】<strong>恒定速率：</strong> 泊松过程假设事件的平均发生速率是恒定的，即在任何固定时间段内发生事件的概率是相同的。
+【3】<strong>指数分布：</strong> 事件之间的时间间隔（到达时间）在泊松过程中遵循指数分布。指数分布的概率密度函数（PDF）表现为急剧下降，适合描述短时间内多次事件发生的情况。</p>
+<blockquote>
+<p>在提到流到达遵循泊松过程时，作者可能在描述流量到达的模型，其中流的到达时间是随机的，且到达之间的间隔时间符合指数分布。这种模拟可以用于评估网络在实际运行环境中面对随机性流量时的性能表现。</p>
+</blockquote>
+</blockquote>
+<h6 id="ps_1">PS：为什么网络领域中，泊松过程通常用于模拟流量的到达模式<a class="headerlink" href="#ps_1" title="Permanent link">&para;</a></h6>
+<blockquote>
+<p>在==网络领域中，泊松过程通常用于模拟流量的到达模式==，原因如下：
+1. <strong>独立性和恒定速率：</strong> 泊松过程的两个关键特性是<em>事件的独立性</em> 和<em>恒定速率</em>。这两个特性使得泊松过程成为模拟随机事件到达的理想选择。在网络中，例如，用户请求、数据包到达、任务提交等事件可能具有独立性，并且其平均到达速率可能在一定时间范围内是相对稳定的。这样的模型对于描述这些随机事件的到达模式是合适的。
+2. <strong>数学简单性：</strong> 泊松过程具有<em>数学上的简单性</em>，其概率分布函数和累积分布函数都有封闭形式的表达式。这使得对于这种类型的过程进行分析和计算变得相对容易。
+3. <strong>指数分布特性：</strong> <em>泊松过程中事件到达的时间间隔符合指数分布</em>。指数分布的特性使得<em>模型更容易处理</em>，而且对于描述随机事件的到达时间具有合理的数学基础。
+4. <strong>适用性广泛：</strong> 泊松过程不仅在网络领域中被广泛使用，还在其他领域，如排队理论、通信系统、生物学等方面得到了广泛应用。这种广泛的适用性使得人们能够更容易地将各种系统的性能建模与分析与泊松过程相结合。</p>
+<p>总体而言，泊松过程为模拟和研究网络中的随机事件提供了一种简单而有效的数学工具。虽然实际网络中的流量往往更为复杂，但泊松过程提供了一个初始的近似，对于理解网络性能、评估系统容量和进行性能分析仍然是有用的。</p>
+</blockquote>
+<p><strong>Collateral damage mitigation</strong>：Another impairment brought by PFC messages is that it can lead to performance degradation of innocent flows, which is known as collateral damage [3]. In this part, we show that DSH can mitigate this problem by avoiding PFC PAUSEs. We consider a typical scenario shown in Fig. 13a, which is a common unit in datacenters and widely adopted by other work [9], [45], [46]. All links are 100Gbps and the propagation delay is 2μs. Two long-lived flows, F0 and F1, are sending traffic from H0 and H1 to R0 and R1, respectively. After their throughputs reach 50Gbps, H2-H25 generate 24 concurrent fan-in flows to R1. Each flow has a size of 64KB, which is smaller than a BDP and thus the fan-in traffic is uncontrolled by congestion control algorithms. At this time, the congestion point is S1 and both F1 and fan-in flows contribute to the congestion. On the other hand, F0 is an innocent flow that does not contribute to the congestion. Ideally, the throughput of F0 should not be reduced. Fig. 13 shows the throughput of F0. With SIH, the through-put of F0 is significantly reduced. This is because the pause threshold Xpoff is very low and thus PFC PAUSEs can be easily triggered. As a result, switch S0 is paused and the packet transmission of F0 is suspended. In comparison, DSH can effectively avoid performance degradation for F0. This is because it can efficiently utilize the headroom and leave enough “footroom” for PFC avoidance. Besides, we observe that the state-of-the-art congestion control algorithms (Fig. 13c and Fig. 13d) are not able to avoid the collateral damage. This is because end-to-end congestion control requires at least 1 RTT to react to traffic changes. Within 1 RTT, it is the buffer management scheme that determines whether PFC messages can be avoided.</p>
+<p>缓解附带损害：PFC消息引起的另一个问题是它可能导致无辜流的性能下降，这被称为"collateral damage"（附带损害）[3]。
+在这一部分，我们展示了DSH通过避免PFC PAUSE可以缓解这个问题。
+我们考虑了图13a中显示的典型场景，这是数据中心中常见的单元，也被其他研究广泛采用[9]，[45]，[46]。
+所有链路速度为100Gbps，传播延迟为2μs。
+两个长寿命流，F0和F1，分别从H0和H1发送流量到R0和R1。
+在它们的吞吐量达到50Gbps后，H2-H25生成了24个并发的汇聚流到达R1。
+每个流的大小为64KB，==小于<strong>BDP</strong>，因此汇聚流量不受拥塞控制算法的控制==。
+此时，拥塞点是S1，F1和汇聚流都导致了拥塞。另一方面，F0是一个无辜流，不会导致拥塞。
+理想情况下，F0的吞吐量不应减少。
+图13显示了F0的吞吐量。使用SIH时，F0的吞吐量显著减少。这是因为暂停阈值Xpoff非常低，因此可以很容易地触发PFC PAUSE。结果，交换机S0被暂停，F0的数据包传输被中止。
+相比之下，DSH可以有效避免F0性能下降。这是因为它可以高效利用头部空间，并为PFC规避留出足够的"余地"。此外，我们观察到现代拥塞控制算法（图13c和图13d）不能避免附带损害。这是因为端到端的拥塞控制需要至少1个往返时间（RTT）来对流量变化做出反应。在1个RTT内，确定是否可以避免PFC消息的是缓冲区管理方案。</p>
+<h6 id="pscollateral-damage-mitigation">PS：Collateral damage mitigation<a class="headerlink" href="#pscollateral-damage-mitigation" title="Permanent link">&para;</a></h6>
+<blockquote>
+<ul>
+<li>"Collateral damage mitigation" 意指<strong>减轻或缓解在某个过程、决策或操作中产生的附带损害</strong>。在特定的上下文中，"collateral damage"（附带损害）是指在实施某项决策或操作时可能对其他方面产生的不良影响或额外的损害。因此，"collateral damage mitigation" 强调采取措施来最小化或避免这些附带的不良影响。</li>
+<li>在提到网络中的 "collateral damage mitigation" 时，可能指的是采取一些策略或设计来减轻在网络操作中产生的附带损害，==特别是在涉及到 PFC（Priority Flow Control）消息引起的问题时。在网络通信中，一些优化或调整可能会影响到整体网络性能，尤其是可能对不相关的流量或任务造成不利影响==。在这种情况下，==采取措施以减轻或避免这些额外的不良影响就是 "collateral damage mitigation" 的目标==。</li>
+</ul>
+</blockquote>
+<h6 id="psbdp">PS：BDP<a class="headerlink" href="#psbdp" title="Permanent link">&para;</a></h6>
+<blockquote>
+<p>"BDP" 是网络中的一个术语，表示<strong>带宽延迟积</strong>（Bandwidth-Delay Product）。带宽延迟积是指在网络通信中，==通过乘以带宽（数据传输速率）和往返时间（Round-Trip Time, RTT），得到一个衡量 <em>网络容量</em> 的值==。数学上，BDP可以用以下公式表示：</p>
+<blockquote>
+<p><span class="arithmatex">\(BDP = \text{带宽} \times \text{往返时间 (RTT)}\)</span></p>
+</blockquote>
+<p>在上述上下文中，提到每个流的大小为64KB，小于 BDP，意味着每个流的数据量相对较小，不足以充分利用网络的带宽容量。这种情况下，流的大小不会导致网络出现拥塞，因为其数据量未达到网络在给定时间内可以容纳的最大数据量（由BDP决定）。
+当流的大小小于 BDP 时，就说明网络在单位时间内能够容纳更多的数据，因此拥塞控制算法可能不会被触发。拥塞控制算法通常根据网络的负载情况来调整数据的发送速率，以避免网络拥塞。在这个特定的场景中，由于流的大小相对较小，可能认为它们不太可能对网络产生明显的拥塞效应，因此拥塞控制算法可能不会介入对这些流进行调整。</p>
+</blockquote>
+<h6 id="ps_2">PS：拥塞控制算法被触发的条件<a class="headerlink" href="#ps_2" title="Permanent link">&para;</a></h6>
+<blockquote>
+<p>拥塞控制算法被触发通常需要满足以下一些条件：
+1. <strong>网络负载高：</strong> 当网络中的数据流量较大，接近或达到网络容量的上限时，可能会发生拥塞。拥塞控制算法会监测网络的负载情况，当网络负载达到一定的阈值时，就可能触发拥塞控制机制。
+2. <strong>队列溢出：</strong> 在网络设备（如路由器或交换机）中，数据包通常会存储在缓冲队列中等待传输。如果这些队列变得过于拥挤，导致队列溢出，就可能触发拥塞控制算法。队列溢出是拥塞的一个指示，表明网络设备无法及时处理所有传入的数据。
+3. <strong>丢包率升高：</strong> 拥塞通常与数据包的丢失相关。当网络设备无法处理所有到达的数据包时，可能会出现丢包。拥塞控制算法可以根据丢包率的升高来判断网络是否处于拥塞状态，并采取相应的措施减缓数据传输速率。
+4. <strong>延迟增加：</strong> 拥塞还可能导致网络的往返时间（Round-Trip Time, RTT）增加。拥塞控制算法会监测延迟的变化，当延迟增加到一定程度时，可能会启动拥塞控制机制。
+5. <strong>ECN（显式拥塞通知）标记：</strong> 在一些网络中，路由器或交换机可以使用 ECN 标记来指示网络的拥塞状态。当数据包经过某个拥塞的网络节点时，该节点可以设置 ECN 标记。拥塞控制算法可以根据 ECN 标记来判断网络状态，并相应地进行调整。</p>
+<p>这些条件的组合可能因网络设计和拥塞控制算法的具体实现而有所不同。拥塞控制算法的目标是在网络负载高的情况下维持稳定的性能，并避免因过度拥塞而导致的性能下降。</p>
+</blockquote>
+<p>![[Pasted image 20231126163009.png]]</p>
+<h3 id="b-benchmark-traffic">B. Benchmark Traffic（基准流量）<a class="headerlink" href="#b-benchmark-traffic" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>在网络领域中，"Benchmark Traffic"（基准流量）通常指用于<strong>性能评估和测试</strong>的==标准化流量模型==。这种流量模型设计得足够简单和具有代表性，以便评估网络设备、协议或系统的性能。基准流量可用于比较不同系统之间的性能，进行基准测试和验证系统在不同负载条件下的表现。</p>
+<p>基准流量的特点可能包括：
+1. <strong>已知流量模式：</strong> 基准流量通常具有<strong>已知的流量模式</strong>，例如特定大小的数据包、特定的到达率或流的数量。这有助于在测试中精确地控制和测量流量。
+2. <strong>可重现性：</strong> 基准流量的生成应<strong>具有可重现性</strong>，以确保在不同的测试环境中能够产生相似的流量，从而实现可靠的比较。
+3. <strong>典型用例：</strong> 基准流量通常设计为模拟网络中的<strong>典型使用</strong>情况，以便评估系统在实际工作负载下的表现。
+4. <strong>容易分析：</strong> 基准流量通常设计为<strong>易于分析</strong>，以便评估网络设备或系统的性能特征，例如吞吐量、延迟和丢包率。
+5. <strong>代表性：</strong> 基准流量应当<strong>具有代表性</strong>，反映出网络中常见的流量特征，以确保测试结果对于实际应用场景具有一定的可靠性。</p>
+<blockquote>
+<p>在研究和测试中，基准流量被广泛用于评估各种网络技术和解决方案的性能。这种流量可以是事先定义的，也可以根据特定的测试需求进行定制。</p>
+</blockquote>
+</blockquote>
+<p>In this part, we evaluate DSH in a large-scale DCN topology.
+在这一部分，我们对DSH在一个大规模的数据中心网络（DCN）拓扑结构中的性能进行评估。</p>
+<h5 id="topology">Topology.<a class="headerlink" href="#topology" title="Permanent link">&para;</a></h5>
+<p>We build a leaf-spine topology with 16 leaf switches, 16 spine switches, and 256 servers. Each leaf switch is connected to 16 servers with 100Gbps downlinks and 16 spine switches with 100Gbps uplinks, forming a full-bisection network. The link delay is 2μs and thus the base RTT is 16μs across the spine. We employ ECMP for load balancing.</p>
+<p>拓扑结构。我们构建了一个包含16个叶交换机、16个脊交换机和256个服务器的叶脊拓扑结构。
+每个叶交换机通过100Gbps下行链路连接到16台服务器，并通过100Gbps上行链路连接到16个脊交换机，形成一个全分割网络。
+链路延迟为2μs，因此沿脊的基本往返时间（RTT）为16μs。我们采用ECMP进行负载均衡。</p>
+<h5 id="switch">Switch.<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h5>
+<p>We emulate the Broadcom Tomahawk switching chip. The settings are the same as those in previous simulations.</p>
+<p>交换机。我们模拟了Broadcom Tomahawk交换芯片，其设置与之前的仿真相同。</p>
+<h5 id="transport">Transport.<a class="headerlink" href="#transport" title="Permanent link">&para;</a></h5>
+<p>We consider two end-to-end congestion control algorithms: DCQCN [1] and PowerTCP [37]. We use the default parameter settings in their open-source simulations.</p>
+<p>传输。我们考虑了两种端到端拥塞控制算法：DCQCN [1] 和PowerTCP [37]。我们使用它们在开源仿真中的默认参数设置。</p>
+<h5 id="workload">Workload.<a class="headerlink" href="#workload" title="Permanent link">&para;</a></h5>
+<p>We generate two kinds of traffic: background traffic and bursty fan-in traffic. The background traffic follows one-to-one pattern. The sender and receiver are randomly chosen. The flow sizes are generated according to a web search workload [27]. The fan-in traffic follows many-to-one pattern, where 16 senders simultaneously transmit 64KB data to the same receiver. The senders are randomly chosen and are in different racks from the receiver. Fan-in flows are classified into the same traffic class. Background flows are randomly classified into other traffic classes. Flow arrivals follow a Poisson process. The total network load is 0.9.</p>
+<p>工作负载。我们生成两种类型的流量：后台流量（background flows）和 突发的汇聚流量（fan-in flows）。
+后台流量遵循一对一的模式。发送方和接收方是随机选择的。流大小根据Web搜索工作负载[27]生成。
+汇聚流量遵循多对一的模式，其中16个发送方同时向同一接收方传输64KB的数据。发送方是随机选择的，并且位于接收方不同的机架中。
+汇聚流被分类为相同的流量类别。后台流被随机分类为其他流量类别。流到达遵循泊松过程。总网络负载为0.9。</p>
+<p>![[Pasted image 20231126165516.png]]</p>
+<h5 id="results">Results.<a class="headerlink" href="#results" title="Permanent link">&para;</a></h5>
+<p>Fig. 14 shows the flow completion time (FCT) under different loads of background traffic. For clear comparison, we normalize each FCT to the value achieved by SIH. The results show that both fan-in flows and background flows can benefit from DSH. With DCQCN, DSH can reduce the average FCTs of background traffic and fan-in traffic by up to 10.1% and 43.3%, respectively. With PowerTCP, DSH can reduce the average FCTs of background traffic and fan-in traffic by up to 31.1% and 57.7%, respectively. This is because DSH can provide more footroom to absorb transient bursty traffic and avoid PFC messages. Furthermore, we evaluate DSH across different DCN ap-plications and network architectures. Besides the web search workload, we also consider other three realistic workloads: a data mining workload [47], a cache workload [28], and a Hadoop workload [28]. Besides leaf-spine topology, we also consider fat-tree topology (k=16) [48]. Other settings keep unchanged. Fig. 15 shows the FCT of background traffic across different workloads and topologies with DCQCN. The results confirm that DSH can improve FCT with different DCN workloads and network topologies.</p>
+<p>结果。图14显示了在不同背景流量负载下的<strong>流完成时间（FCT）</strong>。
+为了进行清晰比较，我们将每个FCT标准化为SIH实现的值。
+结果显示，DSH对汇聚流和后台流均能产生益处：
+- 使用DCQCN，DSH可以将后台流量（bgd flow）和汇聚流量（fan-in flow）的平均FCT分别降低10.1%（b）和43.3%（a）。
+- 使用PowerTCP，DSH可以将后台流量和汇聚流量的平均FCT分别降低31.1%（d）和57.7%（c）。</p>
+<p>这是因为DSH可以提供更多余地来吸收瞬态的突发流量并避免PFC消息。</p>
+<p>![[Pasted image 20231126170101.png]]</p>
+<p>此外，我们在不同的DCN应用和网络架构中评估了DSH。除了Web搜索工作负载外，我们还考虑了其他三种真实的工作负载：数据挖掘工作负载[47]、缓存工作负载[28]和Hadoop工作负载[28]。除了叶脊拓扑结构外，我们还考虑了脂肪树拓扑结构（k=16）[48]。其他设置保持不变。</p>
+<p>图15显示了在不同工作负载和拓扑结构下使用DCQCN的后台流量的FCT。结果证实了DSH在不同的DCN工作负载和网络拓扑结构下都能改善FCT。</p>
+<h3 id="_1">附注：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="_2">数据挖掘工作负载<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<h4 id="_3">缓存工作负载<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h4 id="hadoop">Hadoop工作负载<a class="headerlink" href="#hadoop" title="Permanent link">&para;</a></h4>
+<h4 id="_4">叶脊拓扑结构<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>DCN（数据中心网络）的叶脊拓扑结构是一种广泛用于构建数据中心网络的设计。这种拓扑结构的目标是提供高带宽、低延迟和高度可扩展性，以满足大规模数据中心的需求。</p>
+<p>在叶脊拓扑结构中，网络由两种类型的交换机组成：<em>叶交换机（Leaf Switches）</em> 和 <em>脊交换机（Spine Switches）</em>。以下是叶脊拓扑结构的基本特征：
+1. <strong>叶交换机：</strong> 叶交换机连接到数据中心内部的服务器。<strong>每个叶交换机通常连接到多个服务器，形成了一个聚合点</strong>。这些连接通常是高带宽的，例如100Gbps或更高。
+2. <strong>脊交换机：</strong> <strong>脊交换机则连接到所有的叶交换机</strong>，形成一个脊与叶的网状结构。这样的设计使得任意两个服务器之间都有多条路径可选，提高了网络的冗余性和可用性。脊交换机之间的连接也通常是高带宽的。
+3. <strong>全双工通信：</strong> 在叶脊拓扑结构中，通常采用<strong>全双工通信</strong>，允许数据同时在两个方向上传输，提高了网络的吞吐量。
+4. <strong>低延迟：</strong> 叶脊拓扑结构的设计旨在保持<strong>低延迟</strong>。由于存在<strong>多路径</strong>，数据可以选择最短路径传输，减少了传输延迟。
+5. <strong>可扩展性：</strong> 叶脊拓扑结构是<strong>可扩展</strong>的，可以轻松地添加更多的叶交换机和脊交换机来增加网络的规模，适应不断增长的数据中心需求。</p>
+<p>总体而言，叶脊拓扑结构是一种有效的数据中心网络设计，具有高性能、可扩展性和冗余性，使其成为大规模数据中心的理想选择。</p>
+<h4 id="fat-treek16">脂肪树（fat-tree）拓扑结构（k=16）<a class="headerlink" href="#fat-treek16" title="Permanent link">&para;</a></h4>
+<h5 id="_5">简介：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
+<p>脂肪树是一种用于构建数据中心网络的拓扑结构，旨在提供高性能、低延迟和高度冗余的网络连接。它被广泛应用于大规模数据中心，支持大量服务器之间的通信。</p>
+<h5 id="_6">主要特征：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
+<ol>
+<li><strong>多层结构：</strong> 脂肪树拓扑结构通常包含多个层次，其中包括核心（Core）、汇聚（Aggregation）、边界（Edge）和端点（Leaf）层。每个层次都有其特定的功能和连接。</li>
+<li><strong>全双工通信：</strong> 脂肪树网络中通常采用全双工通信，允许同时进行双向数据传输，提高了网络的吞吐量。</li>
+<li><strong>冗余路径：</strong> 脂肪树的设计使得任意两个节点之间存在多条冗余路径，提高了网络的冗余性和可用性。即使某些路径发生故障，仍然有备用路径可用。</li>
+<li><strong>低延迟：</strong> 由于存在多条路径，数据可以选择最短路径传输，从而减少了传输延迟。</li>
+<li><strong>可扩展性：</strong> 脂肪树是可扩展的，可以通过增加更多的交换机和连接来扩展网络规模，适应不断增长的数据中心需求。</li>
+<li><strong>容错性：</strong> 脂肪树的冗余性和多路径设计提供了一定程度的容错性，使网络更具稳定性。</li>
+</ol>
+<p>总体而言，脂肪树拓扑结构是一种优秀的数据中心网络设计，提供了高性能、冗余性和可扩展性，适用于大规模的计算和存储需求</p>
+<h5 id="_7">具体过程：<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
+<p>Fat-Tree是以交换机为中心的拓扑。支持在横向拓展的同时拓展路径数目；且所有交换机均为相同端口数量的普通设备，降低了网络建设成本。</p>
+<p>Fat-Tree结构共分为三层：核心层、汇聚层、接入层。一个k元的Fat-Tree可以归纳为5个特征：</p>
+<p>每台交换机都有k个端口；
+1. 核心层为顶层，一共有(k/2)^2个交换机；
+2. 一共有k个pod，每个pod有k台交换机组成。其中汇聚层和接入层各占k/2台交换机；
+3. 接入层每个交换机可以容纳k/2台服务器，因此，k元Fat-Tree一共有k个pod，每个pod容纳k<em>k/4个服务器，所有pod共能容纳k</em>k*k/4台服务器；
+4. 任意两个pod之间存在k条路径。</p>
+<p>常见的有2元、4元、6元等结构：
+![[Pasted image 20231126173115.png]]
+![[Pasted image 20231126173125.png]]</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      胡博瑄
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../../../mkdocs/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
