@@ -106,6 +106,7 @@ nav:
     - Algorithm_design:
       - curriculum_study/Algorithm_XJTU/qimo_review.md
       - curriculum_study/Algorithm_XJTU/qimo_big.md
+      - curriculum_study/Algorithm_XJTU/qimo_exe.md
 
   - 优秀论文整理:
     - sci/index.md
