@@ -75,7 +75,7 @@
 
 - `2023.10` 参与西安交通大学计算机学院高性能计算团队 
     - 设计芯片检测的优化（基于NAND闪存）
-    - 师从助理教授聂士强
+    - 师从助理教授[聂世强](https://gr.xjtu.edu.cn/en/web/shiqiang/home?p_p_id=com_liferay_login_web_portlet_LoginPortlet&p_p_lifecycle=0&p_p_state=normal&p_p_state_rcv=1)
 
 ### 新生儿脑积水检测的优化识别与自动分析
 - `2023.10` 参与西安交通大学生物医学工程团队
